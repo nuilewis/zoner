@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zoner/core/core.dart';
-import 'package:zoner/screens/home_screen.dart';
+import 'screens/patient/home/home_screen.dart';
 
 
 void main() {
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Sickler',
+        title: 'Zoner',
         debugShowCheckedModeBanner: false,
         theme: ZonerThemeData.lightTheme,
         darkTheme: ZonerThemeData.darkTheme,
