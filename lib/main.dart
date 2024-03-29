@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zoner/core/core.dart';
-import 'screens/patient/home/home_screen.dart';
+import 'package:zoner/screens/patient/discover/discover_screen.dart';
 
 
 void main() {
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         theme: ZonerThemeData.lightTheme,
         darkTheme: ZonerThemeData.darkTheme,
         themeMode: ThemeMode.system,
-        home: const HomeScreen());
+        home: const DiscoverScreen());
   }
 }
 

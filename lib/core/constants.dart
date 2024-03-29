@@ -8,7 +8,7 @@ const double kDefaultPaddingLarge = 24.0;
 class ZonerInputDecoration {
   static InputDecoration inputDecoration(BuildContext context) {
     return InputDecoration(
-        errorStyle: SicklerTextStyles.bodyMedium
+        errorStyle: ZonerTextStyles.bodyMedium
             .copyWith(color: Theme.of(context).colorScheme.error),
         errorBorder: OutlineInputBorder(
           gapPadding: 4,
@@ -40,10 +40,10 @@ class ZonerInputDecoration {
         filled: true,
         isDense: true,
         fillColor: Theme.of(context).cardColor,
-        hintStyle: SicklerTextStyles.bodyMedium
+        hintStyle: ZonerTextStyles.bodyMedium
             .copyWith(color: ZonerColors.neutral50),
         labelStyle:
-            SicklerTextStyles.bodyMedium.copyWith(color: ZonerColors.black));
+            ZonerTextStyles.bodyMedium.copyWith(color: ZonerColors.black));
   }
 }
 
@@ -125,10 +125,10 @@ class ZonerColors {
 }
 
 ///------Text Styles-------///
-class SicklerTextStyles {
+class ZonerTextStyles {
   ///---Display---//
-  static TextStyle displayLargeBold = const TextStyle(
-    fontWeight: FontWeight.w800,
+  static TextStyle displayLargeAlt = const TextStyle(
+    fontFamily: "Gloock",
     fontSize: 57,
     height: 1,
   );
@@ -139,8 +139,8 @@ class SicklerTextStyles {
     height: 1,
   );
 
-  static TextStyle displayMediumBold = const TextStyle(
-    fontWeight: FontWeight.w800,
+  static TextStyle displayMediumAlt = const TextStyle(
+    fontFamily: "Gloock",
     fontSize: 45,
     height: 1,
   );
@@ -150,12 +150,12 @@ class SicklerTextStyles {
     fontSize: 45,
     height: 1,
   );
-  static TextStyle displaySmallBold = const TextStyle(
-    fontWeight: FontWeight.w800,
+
+  static TextStyle displaySmallAlt = const TextStyle(
+    fontFamily: "Gloock",
     fontSize: 36,
     height: 1,
   );
-
   static TextStyle displaySmall = const TextStyle(
     fontWeight: FontWeight.normal,
     fontSize: 36,
@@ -168,8 +168,18 @@ class SicklerTextStyles {
     fontSize: 32,
     height: 1,
   );
+  static TextStyle headlineLargeAlt = const TextStyle(
+    fontFamily: "Gloock",
+    fontSize: 32,
+    height: 1,
+  );
   static TextStyle headlineMedium = const TextStyle(
-    fontWeight: FontWeight.normal,
+    fontFamily: "Gloock",
+    fontSize: 28,
+    height: 1,
+  );
+  static TextStyle headlineMediumAlt = const TextStyle(
+    fontFamily: "Gloock",
     fontSize: 28,
     height: 1,
   );
@@ -178,10 +188,15 @@ class SicklerTextStyles {
     fontSize: 24,
     height: 1,
   );
+  static TextStyle headlineSmallAlt = const TextStyle(
+    fontFamily: "Gloock",
+    fontSize: 24,
+    height: 1,
+  );
 
   ///---Title---///
-  static TextStyle titleLargeBold = const TextStyle(
-    fontWeight: FontWeight.w800,
+  static TextStyle titleLargeAlt = const TextStyle(
+    fontFamily: "Gloock",
     fontSize: 22,
     height: 1,
   );
@@ -191,8 +206,8 @@ class SicklerTextStyles {
     height: 1,
   );
 
-  static TextStyle titleMediumBold = const TextStyle(
-    fontWeight: FontWeight.w800,
+  static TextStyle titleMediumAlt = const TextStyle(
+    fontFamily: "Gloock",
     fontSize: 16,
     height: 1,
   );
@@ -202,8 +217,8 @@ class SicklerTextStyles {
     height: 1,
   );
 
-  static TextStyle titleSmallBold = const TextStyle(
-    fontWeight: FontWeight.w800,
+  static TextStyle titleSmallAlt = const TextStyle(
+    fontFamily: "Gloock",
     fontSize: 14,
     height: 1,
   );
@@ -214,21 +229,21 @@ class SicklerTextStyles {
   );
 
   ///---Body---///
-  static TextStyle bodyLargeBold = const TextStyle(
-    fontWeight: FontWeight.w800,
+  static TextStyle bodyLargeAlt = const TextStyle(
     fontSize: 16,
-  //  height: 1,
+    fontFamily: "Gloock",
   );
+
   static TextStyle bodyLarge = const TextStyle(
     fontWeight: FontWeight.normal,
     fontSize: 16,
   //  height: 1,
   );
 
-  static TextStyle bodyMediumBold = const TextStyle(
-    fontWeight: FontWeight.w800,
+  static TextStyle bodyMediumAlt = const TextStyle(
+
     fontSize: 14,
-  //  height: 1,
+    fontFamily: "Gloock",
   );
   static TextStyle bodyMedium = const TextStyle(
     fontWeight: FontWeight.normal,
@@ -236,11 +251,6 @@ class SicklerTextStyles {
    // height: 1,
   );
 
-  static TextStyle bodySmallBold = const TextStyle(
-    fontWeight: FontWeight.w800,
-    fontSize: 12,
-   // height: 1,
-  );
   static TextStyle bodySmall = const TextStyle(
     fontWeight: FontWeight.normal,
     fontSize: 12,
