@@ -8,6 +8,8 @@ const double kDefaultPaddingLarge = 24.0;
 class ZonerInputDecoration {
   static InputDecoration inputDecoration(BuildContext context) {
     return InputDecoration(
+        contentPadding:
+            const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
         errorStyle: ZonerTextStyles.bodyMedium
             .copyWith(color: Theme.of(context).colorScheme.error),
         errorBorder: OutlineInputBorder(
@@ -33,15 +35,16 @@ class ZonerInputDecoration {
         ),
         focusedBorder: OutlineInputBorder(
           gapPadding: 0,
-          borderSide:
-              const BorderSide(width: 1, color: ZonerColors.blue60),
+          borderSide: const BorderSide(width: 1, color: ZonerColors.blue60),
           borderRadius: BorderRadius.circular(12),
         ),
         filled: true,
         isDense: true,
-        fillColor: Theme.of(context).cardColor,
-        hintStyle: ZonerTextStyles.bodyMedium
-            .copyWith(color: ZonerColors.neutral50),
+        fillColor: Theme.of(context).brightness == Brightness.light
+            ? ZonerColors.neutral95
+            : ZonerColors.neutral20,
+        hintStyle: ZonerTextStyles.bodyMedium.copyWith(
+            color: ZonerColors.neutral50, fontFamily: "Plus Jakarta Sans"),
         labelStyle:
             ZonerTextStyles.bodyMedium.copyWith(color: ZonerColors.black));
   }
@@ -108,8 +111,6 @@ class ZonerColors {
   static const Color red95 = Color(0xFFFFEDEB);
   static const Color red99 = Color(0xFFFFFBFF);
 
-
-
   ///-----------Neutral---------///
   static const Color neutral10 = Color(0xFF1B1B1F);
   static const Color neutral20 = Color(0xFF303034);
@@ -164,7 +165,6 @@ class ZonerTextStyles {
 
   ///---Headline---///
   static TextStyle headlineLarge = const TextStyle(
-    fontWeight: FontWeight.normal,
     fontSize: 32,
     height: 1,
   );
@@ -174,7 +174,6 @@ class ZonerTextStyles {
     height: 1,
   );
   static TextStyle headlineMedium = const TextStyle(
-    fontFamily: "Gloock",
     fontSize: 28,
     height: 1,
   );
@@ -184,7 +183,6 @@ class ZonerTextStyles {
     height: 1,
   );
   static TextStyle headlineSmall = const TextStyle(
-    fontWeight: FontWeight.normal,
     fontSize: 24,
     height: 1,
   );
@@ -237,23 +235,22 @@ class ZonerTextStyles {
   static TextStyle bodyLarge = const TextStyle(
     fontWeight: FontWeight.normal,
     fontSize: 16,
-  //  height: 1,
+    //  height: 1,
   );
 
   static TextStyle bodyMediumAlt = const TextStyle(
-
     fontSize: 14,
     fontFamily: "Gloock",
   );
   static TextStyle bodyMedium = const TextStyle(
     fontWeight: FontWeight.normal,
     fontSize: 14,
-   // height: 1,
+    // height: 1,
   );
 
   static TextStyle bodySmall = const TextStyle(
     fontWeight: FontWeight.normal,
     fontSize: 12,
-  //  height: 1,
+    //  height: 1,
   );
 }

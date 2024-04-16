@@ -2,10 +2,12 @@ import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:zoner/screens/components_global/components.dart';
+
 import '../../../core/core.dart';
 import 'components/components.dart';
 
 class HomeScreen extends StatelessWidget {
+  static const String id = "home";
   const HomeScreen({super.key});
 
   @override
@@ -127,16 +129,18 @@ class HomeScreen extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Align(
                     alignment: Alignment.centerLeft,
-                    child: Text("Latest articles", style: theme.textTheme.titleMedium,)),
+                    child: Text(
+                      "Latest articles",
+                      style: theme.textTheme.titleMedium,
+                    )),
               ),
               const Gap(16),
               SizedBox(
                 height: 216,
                 child: ListView.separated(
-                  separatorBuilder: (context, index){
+                  separatorBuilder: (context, index) {
                     return const Gap(16);
                   },
-
                   padding: const EdgeInsets.symmetric(horizontal: 16),
                   scrollDirection: Axis.horizontal,
                   itemCount: 4,

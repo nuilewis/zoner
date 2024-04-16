@@ -48,7 +48,7 @@ class _ZonerChipState extends State<ZonerChip> {
 
     return widget.chipType == AppChipType.filter
         ? FilterChip(
-          //  padding: EdgeInsets.only(left: 4, right: labelSelected ? 4 : 8, top: , bottom: 4),
+            //  padding: EdgeInsets.only(left: 4, right: labelSelected ? 4 : 8, top: , bottom: 4),
             deleteIcon: const Icon(FluentIcons.dismiss_24_regular),
             onDeleted: widget.onDeleted,
             selectedColor: theme.colorScheme.primary,
@@ -59,10 +59,12 @@ class _ZonerChipState extends State<ZonerChip> {
             selected: labelSelected,
             label: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
               children: [
                 Visibility(
                   visible: widget.icon != null || widget.iconPath != null,
                   child: Row(
+                    mainAxisSize: MainAxisSize.min,
                     children: [
                       widget.icon != null
                           ? Icon(widget.icon, color: labelColor, size: 20)
@@ -97,10 +99,9 @@ class _ZonerChipState extends State<ZonerChip> {
         : Chip(
             //side: BorderSide(width: 1, color: theme.colorScheme.primary),
             backgroundColor: widget.backgroundColor ??
-                (isDarkMode
-                    ? theme.colorScheme.primary
-                    : ZonerColors.neutral95),
+                (isDarkMode ? theme.colorScheme.primary : ZonerColors.blue95),
             label: Row(
+              mainAxisSize: MainAxisSize.min,
               children: [
                 Visibility(
                   visible: widget.icon != null || widget.iconPath != null,

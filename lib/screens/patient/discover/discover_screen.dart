@@ -1,4 +1,3 @@
-
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -6,6 +5,7 @@ import 'package:zoner/core/core.dart';
 import 'package:zoner/screens/components_global/components.dart';
 
 class DiscoverScreen extends StatelessWidget {
+  static const String id = "discover";
   const DiscoverScreen({super.key});
 
   @override
@@ -39,8 +39,8 @@ class DiscoverScreen extends StatelessWidget {
                             .textTheme.bodyMedium!
                             .copyWith(color: ZonerColors.neutral50)),
                         elevation: const MaterialStatePropertyAll<double>(0),
-                        constraints:
-                            BoxConstraints.tight(const Size(double.infinity, 48)),
+                        constraints: BoxConstraints.tight(
+                            const Size(double.infinity, 48)),
                       ),
                     ),
                     const Gap(16),
@@ -78,14 +78,14 @@ class DiscoverScreen extends StatelessWidget {
                       spacing: 8,
                       children: [
                         ZonerChip(
-                          icon: FluentIcons.crop_sparkle_24_filled,
+                            icon: FluentIcons.crop_sparkle_24_filled,
                             chipType: AppChipType.filter,
                             onSelected: (selected) {
                               ///Todo: Dismiss Chip
                             },
                             label: "Hospital"),
                         ZonerChip(
-                          icon: FluentIcons.content_settings_20_regular,
+                            icon: FluentIcons.content_settings_20_regular,
                             chipType: AppChipType.info,
                             onSelected: (selected) {
                               ///Todo: Dismiss Chip
