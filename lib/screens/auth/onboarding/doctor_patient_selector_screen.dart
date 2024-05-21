@@ -35,7 +35,7 @@ class DoctorPatientSelectorScreen extends StatelessWidget {
                 .fadeIn(
                   duration: 1200.ms,
                 ),
-            const Gap(64),
+            const Gap(kPadding64),
             DoctorPatientSelector(
                 selectedUserType: (UserType selectedUserType) {
               ///Todo: Do something with the selected card;
@@ -56,7 +56,7 @@ class DoctorPatientSelectorScreen extends StatelessWidget {
                 ),
               ),
             ),
-            const Gap(64),
+            const Gap(kPadding64),
           ],
         ),
       ),

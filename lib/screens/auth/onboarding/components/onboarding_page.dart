@@ -2,6 +2,8 @@ import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
+import '../../../../core/core.dart';
+
 class OnboardingPage extends StatelessWidget {
   final String title;
   final String text;
@@ -52,7 +54,7 @@ class OnboardingPage extends StatelessWidget {
                     .copyWith(color: theme.colorScheme.primary),
                 textAlign: TextAlign.center,
               ),
-              const Gap(16),
+              const Gap(kPadding16),
               Text(
                 text,
                 textAlign: TextAlign.center,
@@ -80,7 +82,7 @@ class OnboardingPage extends StatelessWidget {
                   ),
                 ),
               ),
-              const Gap(64),
+              const Gap(kPadding64),
             ],
           ),
         ),

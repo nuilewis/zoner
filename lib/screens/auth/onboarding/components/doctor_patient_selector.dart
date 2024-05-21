@@ -22,7 +22,7 @@ class _DoctorPatientSelectorState extends State<DoctorPatientSelector> {
   Widget build(BuildContext context) {
     return ListView.separated(
         shrinkWrap: true,
-        separatorBuilder: (context, index) => const Gap(16),
+        separatorBuilder: (context, index) => const Gap(kPadding16),
         itemCount: UserType.values.length,
         itemBuilder: (context, index) {
           isCardSelected.putIfAbsent(index, () => false);

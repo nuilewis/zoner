@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:zoner/screens/components_global/components.dart';
 
+import '../../../../core/core.dart';
+
 class DocumentsSubmittedScreen extends StatelessWidget {
   static const String id = "documents_submitted";
 
@@ -23,13 +25,13 @@ class DocumentsSubmittedScreen extends StatelessWidget {
               style: theme.textTheme.displayMedium!
                   .copyWith(color: theme.colorScheme.primary, height: 1.2),
             ),
-            const Gap(16),
+            const Gap(kPadding16),
             const Text(
               "You will recieve a mail shortly when approved.",
             ),
-            const Gap(64),
+            const Gap(kPadding64),
             ZonerButton(onPressed: () {}, label: "Awesome!"),
-            const Gap(64),
+            const Gap(kPadding64),
           ],
         ),
       ),

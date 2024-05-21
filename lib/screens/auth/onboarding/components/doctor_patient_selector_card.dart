@@ -36,7 +36,7 @@ class DoctorPatientSelectorCard extends StatelessWidget {
                 radius: 42,
                 backgroundImage: AssetImage("assets/images/memoji.png"),
               ),
-              const Gap(16),
+              const Gap(kPadding16),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -46,7 +46,7 @@ class DoctorPatientSelectorCard extends StatelessWidget {
                       style: theme.textTheme.titleLarge!
                           .copyWith(color: isSelected ? Colors.white : null),
                     ),
-                    const Gap(8),
+                    const Gap(kPadding8),
                     Text(
                       userType == UserType.doctor
                           ? "Consult patients, prescribe medications, earn"

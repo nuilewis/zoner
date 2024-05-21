@@ -11,10 +11,10 @@ class ConsultationCTACard extends StatelessWidget {
   final VoidCallback onPressed;
   const ConsultationCTACard(
       {super.key,
-        this.backgroundColor,
-        this.labelColor,
-        this.label,
-        required this.onPressed});
+      this.backgroundColor,
+      this.labelColor,
+      this.label,
+      required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +41,7 @@ class ConsultationCTACard extends StatelessWidget {
                   shape: BoxShape.circle, color: theme.scaffoldBackgroundColor),
               child: Icon(
                 FluentIcons.stethoscope_24_regular,
-                color: labelColor ?? ZonerColors.yellow60,
+                color: labelColor ?? ZonerColors.orange60,
               ),
             ),
             const Gap(144),

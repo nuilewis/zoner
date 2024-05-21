@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:zoner/screens/components_global/zoner_bottom_sheet.dart';
 
 import '../../../core/core.dart';
 import '../../components_global/components.dart';
@@ -48,7 +47,7 @@ class _BasicInfoScreenState extends State<BasicInfoScreen> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     const Text("Full Names"),
-                    const Gap(8),
+                    const Gap(kPadding8),
                     TextFormField(
                       // initialValue: nameController.value.text,
                       controller: nameController,
@@ -64,9 +63,9 @@ class _BasicInfoScreenState extends State<BasicInfoScreen> {
                         }
                       },
                     ),
-                    const Gap(16),
+                    const Gap(kPadding16),
                     const Text("Age"),
-                    const Gap(8),
+                    const Gap(kPadding8),
                     TextFormField(
                       controller: ageController,
                       keyboardType: TextInputType.number,
@@ -83,9 +82,9 @@ class _BasicInfoScreenState extends State<BasicInfoScreen> {
                         }
                       },
                     ),
-                    const Gap(16),
+                    const Gap(kPadding16),
                     const Text("Address"),
-                    const Gap(8),
+                    const Gap(kPadding8),
                     TextFormField(
                       controller: addressController,
                       keyboardType: TextInputType.streetAddress,
@@ -99,9 +98,9 @@ class _BasicInfoScreenState extends State<BasicInfoScreen> {
                         }
                       },
                     ),
-                    const Gap(16),
+                    const Gap(kPadding16),
                     const Text("Sex"),
-                    const Gap(8),
+                    const Gap(kPadding8),
                     TextFormField(
                       onTap: () async {
                         await showModalBottomSheet(
@@ -155,7 +154,7 @@ class _BasicInfoScreenState extends State<BasicInfoScreen> {
                         }
                       },
                     ),
-                    const Gap(16),
+                    const Gap(kPadding16),
                   ],
                 ),
               ),
@@ -172,8 +171,8 @@ class _BasicInfoScreenState extends State<BasicInfoScreen> {
                           }
                         },
                         label: "Continue"),
-                    const Gap(16),
-                    const Gap(64),
+                    const Gap(kPadding16),
+                    const Gap(kPadding64),
                   ],
                 ),
               )

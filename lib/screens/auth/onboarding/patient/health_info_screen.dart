@@ -51,7 +51,7 @@ class _HealthInfoScreenState extends State<HealthInfoScreen> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     const Text("Full Names"),
-                    const Gap(8),
+                    const Gap(kPadding8),
                     TextFormField(
                       // initialValue: nameController.value.text,
                       controller: heightController,
@@ -67,9 +67,9 @@ class _HealthInfoScreenState extends State<HealthInfoScreen> {
                         }
                       },
                     ),
-                    const Gap(16),
+                    const Gap(kPadding16),
                     const Text("Weight"),
-                    const Gap(8),
+                    const Gap(kPadding8),
                     TextFormField(
                       controller: weightController,
                       keyboardType: TextInputType.number,
@@ -86,9 +86,9 @@ class _HealthInfoScreenState extends State<HealthInfoScreen> {
                         }
                       },
                     ),
-                    const Gap(16),
+                    const Gap(kPadding16),
                     const Text("Medical Conditions"),
-                    const Gap(8),
+                    const Gap(kPadding8),
                     TextFormField(
                       controller: medicalConditionController,
                       keyboardType: TextInputType.streetAddress,
@@ -115,9 +115,9 @@ class _HealthInfoScreenState extends State<HealthInfoScreen> {
                         ZonerChip(chipType: AppChipType.info, label: "Asthma"),
                       ],
                     ),
-                    const Gap(16),
+                    const Gap(kPadding16),
                     const Text("Allergies"),
-                    const Gap(8),
+                    const Gap(kPadding8),
                     TextFormField(
                       controller: allergyController,
                       keyboardType: TextInputType.streetAddress,
@@ -158,7 +158,7 @@ class _HealthInfoScreenState extends State<HealthInfoScreen> {
                     },
                     label: "Continue"),
               ),
-              const Gap(64),
+              const Gap(kPadding64),
             ],
           ),
         ),

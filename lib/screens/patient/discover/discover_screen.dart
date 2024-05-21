@@ -43,7 +43,7 @@ class DiscoverScreen extends StatelessWidget {
                             const Size(double.infinity, 48)),
                       ),
                     ),
-                    const Gap(16),
+                    const Gap(kPadding16),
                     IconButton.filled(
                         style: IconButton.styleFrom(
                           backgroundColor: isDarkMode
@@ -58,7 +58,7 @@ class DiscoverScreen extends StatelessWidget {
                         icon: const Icon(FluentIcons.map_24_regular))
                   ],
                 ),
-                const Gap(8),
+                const Gap(kPadding8),
                 Row(
                   children: [
                     IconButton.filled(
@@ -73,7 +73,7 @@ class DiscoverScreen extends StatelessWidget {
                           ///Todo: Change to Map
                         },
                         icon: const Icon(FluentIcons.filter_24_regular)),
-                    const Gap(8),
+                    const Gap(kPadding8),
                     Wrap(
                       spacing: 8,
                       children: [

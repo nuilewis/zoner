@@ -2,6 +2,7 @@ import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
+import '../../../../core/core.dart';
 import '../../../components_global/components.dart';
 
 class ConsultationCard extends StatelessWidget {
@@ -27,24 +28,24 @@ class ConsultationCard extends StatelessWidget {
                 radius: 24,
                 backgroundImage: AssetImage("assets/images/memoji.png"),
               ),
-              const Gap(16),
+              const Gap(kPadding16),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const Gap(8),
+                  const Gap(kPadding8),
                   Text(
                     "Consultation with Dr Lucy",
                     style: theme.textTheme.bodyMedium,
                   ),
-                  const Gap(8),
+                  const Gap(kPadding8),
                   Row(
                     children: [
                       Icon(
                         FluentIcons.clock_24_regular,
                         color: theme.primaryColor,
                       ),
-                      const Gap(8),
+                      const Gap(kPadding8),
                       const Text("8:00 AM - 9:00 AM"),
                     ],
                   )
@@ -52,7 +53,7 @@ class ConsultationCard extends StatelessWidget {
               ),
             ],
           ),
-          const Gap(8),
+          const Gap(kPadding8),
           Align(
             alignment: Alignment.centerRight,
             child: FittedBox(

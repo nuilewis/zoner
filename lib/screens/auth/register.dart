@@ -46,7 +46,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   const Text("Email"),
-                  const Gap(8),
+                  const Gap(kPadding8),
                   TextFormField(
                     controller: emailController,
                     keyboardType: TextInputType.emailAddress,
@@ -64,9 +64,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       }
                     },
                   ),
-                  const Gap(16),
+                  const Gap(kPadding16),
                   const Text("Password"),
-                  const Gap(8),
+                  const Gap(kPadding8),
                   TextFormField(
                     controller: passwordController,
                     keyboardType: TextInputType.visiblePassword,
@@ -99,9 +99,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       }
                     },
                   ),
-                  const Gap(16),
+                  const Gap(kPadding16),
                   const Text("Confirm Password"),
-                  const Gap(8),
+                  const Gap(kPadding8),
                   TextFormField(
                     controller: confirmPasswordController,
                     keyboardType: TextInputType.visiblePassword,
@@ -150,14 +150,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         }
                       },
                       label: "Create Account"),
-                  const Gap(16),
+                  const Gap(kPadding16),
                   ZonerButton(
                     iconPath: "assets/svg/google.svg",
                     onPressed: () {},
                     label: "Continue With Google",
                     buttonType: AppButtonType.secondary,
                   ),
-                  const Gap(8),
+                  const Gap(kPadding8),
                   const Text("or"),
                   TextButton(
                     onPressed: () {},
@@ -167,7 +167,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           .copyWith(color: theme.colorScheme.primary),
                     ),
                   ),
-                  const Gap(64),
+                  const Gap(kPadding64),
                 ],
               ),
             )

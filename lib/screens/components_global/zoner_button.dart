@@ -124,7 +124,7 @@ class ZonerButton extends StatelessWidget {
                       : SvgPicture.asset(iconPath ?? "",
                           colorFilter:
                               ColorFilter.mode(labelColor, BlendMode.srcIn)),
-                  const Gap(8)
+                  const Gap(kPadding8)
                 ],
               ),
             ),
@@ -137,13 +137,12 @@ class ZonerButton extends StatelessWidget {
               visible: trailingIcon != null || trailingIconPath != null,
               child: Row(
                 children: [
-                  const Gap(8),
+                  const Gap(kPadding8),
                   trailingIcon != null
                       ? Icon(trailingIcon)
                       : SvgPicture.asset(trailingIconPath ?? "",
-                      colorFilter:
-                      ColorFilter.mode(labelColor, BlendMode.srcIn)),
-
+                          colorFilter:
+                              ColorFilter.mode(labelColor, BlendMode.srcIn)),
                 ],
               ),
             ),

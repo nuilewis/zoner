@@ -31,7 +31,7 @@ class HomeScreen extends StatelessWidget {
                           backgroundImage:
                               AssetImage("assets/images/memoji.png"),
                         ),
-                        const Gap(16),
+                        const Gap(kPadding16),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisSize: MainAxisSize.min,
@@ -55,7 +55,7 @@ class HomeScreen extends StatelessWidget {
                       "Ongoing Consultation",
                       style: theme.textTheme.titleMedium,
                     ),
-                    const Gap(16),
+                    const Gap(kPadding16),
                     const ConsultationCard(),
                     const Gap(32),
                     Align(
@@ -65,7 +65,7 @@ class HomeScreen extends StatelessWidget {
                         style: theme.textTheme.titleMedium,
                       ),
                     ),
-                    const Gap(8),
+                    const Gap(kPadding8),
                   ],
                 ),
               ),
@@ -73,15 +73,15 @@ class HomeScreen extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
-                    const Gap(16),
+                    const Gap(kPadding16),
                     ConsultationCTACard(
                       onPressed: () {
                         ///Todo: start consultation Flow
                       },
                       label: "Consult\n with AI",
-                      labelColor: ZonerColors.yellow60,
+                      labelColor: ZonerColors.orange60,
                     ),
-                    const Gap(16),
+                    const Gap(kPadding16),
                     ConsultationCTACard(
                       onPressed: () {
                         ///Todo: start consultation Flow
@@ -89,7 +89,7 @@ class HomeScreen extends StatelessWidget {
                       backgroundColor: theme.cardColor,
                       labelColor: theme.primaryColor,
                     ),
-                    const Gap(16),
+                    const Gap(kPadding16),
                   ],
                 ),
               ),
@@ -134,12 +134,12 @@ class HomeScreen extends StatelessWidget {
                       style: theme.textTheme.titleMedium,
                     )),
               ),
-              const Gap(16),
+              const Gap(kPadding16),
               SizedBox(
                 height: 216,
                 child: ListView.separated(
                   separatorBuilder: (context, index) {
-                    return const Gap(16);
+                    return const Gap(kPadding16);
                   },
                   padding: const EdgeInsets.symmetric(horizontal: 16),
                   scrollDirection: Axis.horizontal,
@@ -150,7 +150,7 @@ class HomeScreen extends StatelessWidget {
                   },
                 ),
               ),
-              const Gap(64),
+              const Gap(kPadding64),
             ],
           ),
         ),
@@ -207,7 +207,7 @@ class ArticleCard extends StatelessWidget {
               ],
             ),
           ),
-          const Gap(16),
+          const Gap(kPadding16),
           Text(
             "12 Fruits and Vegetables, to help boost, your immune system",
             style: theme.textTheme.bodyMedium,
