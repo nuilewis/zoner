@@ -24,21 +24,21 @@ class DiscoverScreen extends StatelessWidget {
                   children: [
                     Expanded(
                       child: SearchBar(
-                        padding: const MaterialStatePropertyAll<EdgeInsets>(
+                        padding: const WidgetStatePropertyAll<EdgeInsets>(
                             EdgeInsets.symmetric(horizontal: 16)),
                         leading: const Icon(
                           FluentIcons.search_24_regular,
                           color: ZonerColors.neutral50,
                         ),
-                        backgroundColor: MaterialStatePropertyAll<Color>(
+                        backgroundColor: WidgetStatePropertyAll<Color>(
                             isDarkMode
                                 ? ZonerColors.neutral20
                                 : ZonerColors.neutral95),
                         hintText: "Search",
-                        hintStyle: MaterialStatePropertyAll<TextStyle>(theme
+                        hintStyle: WidgetStatePropertyAll<TextStyle>(theme
                             .textTheme.bodyMedium!
                             .copyWith(color: ZonerColors.neutral50)),
-                        elevation: const MaterialStatePropertyAll<double>(0),
+                        elevation: const WidgetStatePropertyAll<double>(0),
                         constraints: BoxConstraints.tight(
                             const Size(double.infinity, 48)),
                       ),

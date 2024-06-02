@@ -84,7 +84,7 @@ class _ScheduleAppointmentCalendarScreenState
                   ),
                   const Gap(kPadding8),
                   CalendarWeekDaySelector(selectedDay: (selectedDay) {
-                    print(selectedDay);
+                  //  print(selectedDay);
 
                     setState(() {
                       _selectedDay = selectedDay;

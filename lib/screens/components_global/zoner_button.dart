@@ -57,7 +57,8 @@ class ZonerButton extends StatelessWidget {
         labelColor = color ?? theme.colorScheme.onPrimary;
 
         style = ElevatedButton.styleFrom(
-          fixedSize: isChipButton! ? const Size.fromHeight(36) : null,
+          padding: const EdgeInsets.symmetric(horizontal: kPadding24),
+          fixedSize: isChipButton! ? const Size.fromHeight(42) : null,
           alignment: Alignment.center,
           backgroundColor: backgroundColor ?? theme.colorScheme.primary,
           foregroundColor: color ?? Colors.white,
@@ -68,7 +69,7 @@ class ZonerButton extends StatelessWidget {
         labelColor = color ?? theme.colorScheme.onPrimaryContainer;
 
         style = ElevatedButton.styleFrom(
-          fixedSize: isChipButton! ? const Size.fromHeight(36) : null,
+          fixedSize: isChipButton! ? const Size.fromHeight(42) : null,
           backgroundColor:
               backgroundColor ?? theme.colorScheme.primaryContainer,
           foregroundColor: labelColor,
@@ -79,7 +80,8 @@ class ZonerButton extends StatelessWidget {
         labelColor = color ?? theme.colorScheme.primary;
 
         style = ElevatedButton.styleFrom(
-          fixedSize: isChipButton! ? const Size.fromHeight(36) : null,
+          padding: const EdgeInsets.symmetric(horizontal: kPadding24),
+          fixedSize: isChipButton! ? const Size.fromHeight(42) : null,
           backgroundColor: Colors.transparent,
           foregroundColor: color ?? theme.colorScheme.primary,
           side: BorderSide(
@@ -91,7 +93,7 @@ class ZonerButton extends StatelessWidget {
         break;
       case AppButtonType.text:
         style = ElevatedButton.styleFrom(
-          fixedSize: isChipButton! ? const Size.fromHeight(36) : null,
+          fixedSize: isChipButton! ? const Size.fromHeight(42) : null,
           backgroundColor: Colors.transparent,
           foregroundColor: color ?? theme.colorScheme.primary,
         );
@@ -100,7 +102,7 @@ class ZonerButton extends StatelessWidget {
 
       default:
         style = ElevatedButton.styleFrom(
-          fixedSize: isChipButton! ? const Size.fromHeight(36) : null,
+          fixedSize: isChipButton! ? const Size.fromHeight(42) : null,
           backgroundColor: backgroundColor ?? theme.colorScheme.primary,
           foregroundColor: color ?? Colors.white,
         );
@@ -132,7 +134,7 @@ class ZonerButton extends StatelessWidget {
                 style: Theme.of(context)
                     .textTheme
                     .bodyMedium!
-                    .copyWith(color: labelColor)),
+                    .copyWith(color: labelColor, fontWeight: FontWeight.w600)),
             Visibility(
               visible: trailingIcon != null || trailingIconPath != null,
               child: Row(
