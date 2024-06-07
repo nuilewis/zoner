@@ -27,14 +27,14 @@ class AvailabilityTimeItem extends StatelessWidget {
       splashFactory: InkSparkle.splashFactory,
       splashColor: theme.colorScheme.primary.withOpacity(.2),
       child: Container(
-        padding:
-            const EdgeInsets.symmetric(horizontal: kPadding16, vertical: kPadding8),
+        padding: const EdgeInsets.symmetric(
+            horizontal: kPadding16, vertical: kPadding8),
         decoration: BoxDecoration(
             color: isSelected ? theme.colorScheme.primary : null,
             borderRadius: BorderRadius.circular(kPadding32),
             border: Border.all(
                 color:
-                    isDarkMode ? ZonerColors.neutral15 : ZonerColors.purple80)),
+                    isDarkMode ? ZonerColors.neutral20 : ZonerColors.purple80)),
         child: Center(
           child: Text(
             time,

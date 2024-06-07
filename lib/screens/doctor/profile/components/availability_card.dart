@@ -49,7 +49,7 @@ class AvailabilityCard extends StatelessWidget {
               physics: const NeverScrollableScrollPhysics(),
               padding: EdgeInsets.zero,
               shrinkWrap: true,
-              itemBuilder: (context, index) => AvailabilityListItem(
+              itemBuilder: (context, index) => AvailabilityTimeListItem(
                   day: availabilityData.keys.toList()[index],
                   availability: availabilityData.values.toList()[index]),
               separatorBuilder: (context, index) => const Gap(kPadding8),

@@ -4,7 +4,7 @@ import 'package:gap/gap.dart';
 
 import '../../../../core/core.dart';
 import '../../../components_global/components.dart';
-import 'components.dart';
+import '../../consultation/components/components.dart';
 
 class DoctorSearchResultCard extends StatelessWidget {
   const DoctorSearchResultCard({super.key});
@@ -73,7 +73,7 @@ class DoctorSearchResultCard extends StatelessWidget {
           ),
           const Gap(kPadding8),
           ZonerChip(
-            color: theme.colorScheme.primary,
+            selectedColor: theme.colorScheme.primary,
             chipType: AppChipType.info,
             label: "Bamenda Regional Hospital",
             iconPath: "assets/svg/hospital-filled.svg",

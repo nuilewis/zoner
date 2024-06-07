@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:zoner/core/constants.dart';
 
-import 'availability_time_item.dart';
+import 'availability_time_list_item.dart';
 
 class AvailabilityTimeSelector extends StatefulWidget {
   ///Todo: refactor this function to return DateTime objects

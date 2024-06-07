@@ -1,7 +1,7 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
+import 'package:zoner/screens/components_global/components.dart';
 
 import '../../core/core.dart';
 
@@ -12,8 +12,8 @@ class ZonerChip extends StatefulWidget {
     this.onDeleted,
     required this.label,
     this.chipType = AppChipType.filter,
-    this.color,
-    this.backgroundColor,
+    this.selectedColor,
+    this.selectedBackgroundColor,
     this.icon,
     this.iconPath,
   });
@@ -24,15 +24,15 @@ class ZonerChip extends StatefulWidget {
   final IconData? icon;
   final String? iconPath;
   final String label;
-  final Color? color;
-  final Color? backgroundColor;
+  final Color? selectedColor;
+  final Color? selectedBackgroundColor;
 
   @override
   State<ZonerChip> createState() => _ZonerChipState();
 }
 
 class _ZonerChipState extends State<ZonerChip> {
-  bool labelSelected = false;
+  bool isSelected = false;
 
   @override
   Widget build(BuildContext context) {
@@ -42,86 +42,112 @@ class _ZonerChipState extends State<ZonerChip> {
     }
     final ThemeData theme = Theme.of(context);
     bool isDarkMode = theme.brightness == Brightness.dark;
-    Color labelColor = labelSelected
-        ? Colors.white
-        : (!isDarkMode ? ZonerColors.neutral30 : Colors.white);
 
     return widget.chipType == AppChipType.filter
         ? FilterChip(
-            //  padding: EdgeInsets.only(left: 4, right: labelSelected ? 4 : 8, top: , bottom: 4),
-            deleteIcon: const Icon(FluentIcons.dismiss_24_regular),
+            side: isSelected
+                ? null
+                : BorderSide(
+                    color: isDarkMode
+                        ? ZonerColors.neutral20
+                        : ZonerColors.neutral90),
+            padding: EdgeInsets.only(
+              top: kPadding12,
+              bottom: kPadding12,
+              left: (widget.icon != null || widget.iconPath != null)
+                  ? kPadding8
+                  : kPadding16,
+              right: kPadding16,
+            ),
+            deleteIcon: Icon(
+              FluentIcons.dismiss_24_regular,
+              size: 16,
+              color: isSelected ? theme.scaffoldBackgroundColor : null,
+            ),
             onDeleted: widget.onDeleted,
-            selectedColor: theme.colorScheme.primary,
-            backgroundColor:
-                isDarkMode ? ZonerColors.neutral20 : ZonerColors.neutral95,
-            showCheckmark: false,
-            // checkmarkColor: labelColor,
-            selected: labelSelected,
+            selectedColor:
+                widget.selectedBackgroundColor ?? theme.colorScheme.primary,
+            backgroundColor: theme.scaffoldBackgroundColor,
+            showCheckmark:
+                (widget.icon != null || widget.iconPath != null) ? false : true,
+            checkmarkColor: isSelected
+                ? theme.scaffoldBackgroundColor
+                : theme.iconTheme.color,
+            selected: isSelected,
             label: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisSize: MainAxisSize.min,
               children: [
                 Visibility(
-                  visible: widget.icon != null || widget.iconPath != null,
+                  visible: widget.iconPath != null || widget.icon != null,
                   child: Row(
-                    mainAxisSize: MainAxisSize.min,
                     children: [
-                      widget.icon != null
-                          ? Icon(widget.icon, color: labelColor, size: 20)
-                          : SvgPicture.asset(widget.iconPath ?? "",
-                              height: 20,
-                              colorFilter: ColorFilter.mode(
-                                  labelColor, BlendMode.srcIn)),
-                      const Gap(kPadding8)
+                      ZonerIcon(
+                        size: 16,
+                        iconPath: widget.iconPath,
+                        icon: widget.icon,
+                        color:
+                            isSelected ? theme.scaffoldBackgroundColor : null,
+                      ),
+                      const Gap(kPadding8),
                     ],
                   ),
                 ),
                 Text(
                   widget.label,
                   style: theme.textTheme.bodyMedium!.copyWith(
-                    color: labelColor,
-                  ),
+                      color: isSelected
+                          ? theme.scaffoldBackgroundColor
+                          : theme.textTheme.bodyMedium?.color),
                 ),
-                const Gap(kPadding8),
-                Offstage(
-                    offstage: !labelSelected,
-                    child: Icon(FluentIcons.dismiss_24_regular,
-                        color: labelColor, size: 20)),
               ],
             ),
             onSelected: (value) {
               setState(() {
-                labelSelected = value;
+                isSelected = value;
               });
 
               widget.onSelected!.call(value);
             })
         : Chip(
-            //side: BorderSide(width: 1, color: theme.colorScheme.primary),
-            backgroundColor: widget.backgroundColor ??
-                (isDarkMode ? theme.colorScheme.primary : ZonerColors.purple95),
+            backgroundColor:
+                widget.selectedBackgroundColor ?? theme.scaffoldBackgroundColor,
+            side: widget.selectedBackgroundColor == null
+                ? BorderSide(
+                    color: isDarkMode
+                        ? ZonerColors.neutral20
+                        : ZonerColors.neutral90)
+                : null,
+            padding: EdgeInsets.only(
+              top: kPadding12,
+              bottom: kPadding12,
+              left: (widget.icon != null || widget.iconPath != null)
+                  ? kPadding8
+                  : kPadding16,
+              right: kPadding16,
+            ),
             label: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisSize: MainAxisSize.min,
               children: [
                 Visibility(
-                  visible: widget.icon != null || widget.iconPath != null,
+                  visible: widget.iconPath != null || widget.icon != null,
                   child: Row(
                     children: [
-                      widget.icon != null
-                          ? Icon(widget.icon, color: labelColor, size: 20)
-                          : SvgPicture.asset(widget.iconPath ?? "",
-                              height: 20,
-                              colorFilter: ColorFilter.mode(
-                                  labelColor, BlendMode.srcIn)),
-                      const Gap(kPadding8)
+                      ZonerIcon(
+                        size: 16,
+                        iconPath: widget.iconPath,
+                        icon: widget.icon,
+                        color: widget.selectedColor,
+                      ),
+                      const Gap(kPadding8),
                     ],
                   ),
                 ),
                 Text(
                   widget.label,
-                  style: theme.textTheme.bodyMedium!.copyWith(
-                    color: labelColor,
-                  ),
+                  style: theme.textTheme.bodyMedium!
+                      .copyWith(color: widget.selectedColor),
                 ),
               ],
             ),

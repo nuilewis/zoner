@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
 import 'package:zoner/screens/patient/discover/discover_screen.dart';
+import 'package:zoner/screens/patient/discover/hospital_details_screen.dart';
 
 import '../screens/auth/auth.dart';
 import '../screens/auth/onboarding/onboarding.dart';
@@ -77,6 +78,15 @@ class AppRouter {
         name: DiscoverScreen.id,
         builder: (BuildContext context, GoRouterState state) =>
             const DiscoverScreen(),
+        routes: <GoRoute>[
+          //------ Auth-------//
+          GoRoute(
+            path: HospitalDetailsScreen.id,
+            name: HospitalDetailsScreen.id,
+            builder: (BuildContext context, GoRouterState state) =>
+                const HospitalDetailsScreen(),
+          ),
+        ],
       ),
     ],
   );

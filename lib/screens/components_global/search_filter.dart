@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:gap/gap.dart';
 
-import '../../../../core/core.dart';
-import '../../../components_global/components.dart';
+import '../../core/core.dart';
+import '../patient/consultation/components/components.dart';
 import 'components.dart';
 
 class SearchFilter extends StatefulWidget {

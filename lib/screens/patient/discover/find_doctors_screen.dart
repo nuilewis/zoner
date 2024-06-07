@@ -2,8 +2,8 @@ import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:gap/gap.dart';
+import 'package:zoner/screens/components_global/search_filter.dart';
 import 'package:zoner/screens/patient/consultation/components/components.dart';
-import 'package:zoner/screens/patient/consultation/components/search_filter.dart';
 
 import '../../../core/core.dart';
 import '../../components_global/components.dart';

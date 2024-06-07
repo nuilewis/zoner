@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gap/gap.dart';
-import 'package:zoner/screens/patient/consultation/components/sickler_calendar_day_selector_item.dart';
+import 'package:zoner/screens/patient/consultation/components/calendar_day_selector_item.dart';
 
 class CalendarWeekDaySelector extends StatefulWidget {
   const CalendarWeekDaySelector({super.key, required this.selectedDay});

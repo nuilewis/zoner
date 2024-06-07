@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:zoner/core/core.dart';
 import 'package:zoner/screens/components_global/components.dart';
-import 'package:zoner/screens/patient/consultation/components/available_time_selector.dart';
+import 'package:zoner/screens/patient/discover/components/available_time_selector.dart';
 
 class ScheduleAppointmentScreen extends StatelessWidget {
   static const String id = "schedule_appointment";

@@ -49,7 +49,7 @@ class ZonerInputDecoration {
         isDense: true,
         fillColor: Theme.of(context).brightness == Brightness.light
             ? ZonerColors.neutral95
-            : ZonerColors.neutral15,
+            : ZonerColors.neutral20,
         hintStyle: ZonerTextStyles.bodyMedium.copyWith(
             color: ZonerColors.neutral50, fontFamily: "Plus Jakarta Sans"),
         labelStyle:

@@ -59,6 +59,7 @@ class ZonerAppBar extends StatelessWidget {
                 icon: const Icon(FluentIcons.list_rtl_20_filled)),
           ],
         ),
+        const Gap(kPadding8),
         Visibility(
           visible: showTitle!,
           child: Text(pageTitle, style: theme.textTheme.displaySmall),

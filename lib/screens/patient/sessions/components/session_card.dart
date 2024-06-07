@@ -10,7 +10,9 @@ enum SessionState { request, ongoing, completed }
 
 class SessionCard extends StatelessWidget {
   final SessionState sessionState;
-  const SessionCard({super.key, this.sessionState = SessionState.ongoing});
+  final EdgeInsetsGeometry? margin;
+  const SessionCard(
+      {super.key, this.sessionState = SessionState.ongoing, this.margin});
 
   @override
   Widget build(BuildContext context) {
@@ -40,6 +42,7 @@ class SessionCard extends StatelessWidget {
     }
 
     return Container(
+      margin: margin,
       width: MediaQuery.sizeOf(context).width * .9,
       padding: const EdgeInsets.all(kPadding16),
       decoration: sessionDecoration,

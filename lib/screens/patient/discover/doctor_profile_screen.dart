@@ -46,22 +46,22 @@ class DoctorProfileScreen extends StatelessWidget {
               child: Row(
                 children: [
                   Gap(kPadding16),
-                  ProfileStatsPills(
+                  LargePillChips(
                     label: "8 Yrs",
                     icon: FluentIcons.clock_24_filled,
                   ),
                   Gap(kPadding12),
-                  ProfileStatsPills(
+                  LargePillChips(
                     label: "4.9",
                     icon: FluentIcons.star_24_filled,
                   ),
                   Gap(kPadding12),
-                  ProfileStatsPills(
+                  LargePillChips(
                     label: "37",
                     icon: FluentIcons.people_24_filled,
                   ),
                   Gap(kPadding12),
-                  ProfileStatsPills(
+                  LargePillChips(
                     label: "Bamenda Regional Hospital",
                     iconPath: "assets/svg/hospital-filled.svg",
                   ),

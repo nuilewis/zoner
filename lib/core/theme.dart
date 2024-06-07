@@ -227,7 +227,7 @@ class ZonerThemeData {
       elevation: 0,
       backgroundColor: Colors.transparent,
     ),
-    cardColor: ZonerColors.neutral15,
+    cardColor: ZonerColors.neutral20,
     elevatedButtonTheme: const ElevatedButtonThemeData(
       style: ButtonStyle(
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
