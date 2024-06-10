@@ -4,14 +4,14 @@ import 'package:gap/gap.dart';
 import 'package:zoner/core/core.dart';
 
 class ZonerAppBar extends StatelessWidget {
-  final String pageTitle;
+  final String? pageTitle;
   final List<Widget>? actions;
   final bool? showTitle;
   final bool? showBackButton;
 
   const ZonerAppBar(
       {super.key,
-      required this.pageTitle,
+      this.pageTitle,
       this.actions,
       this.showTitle = true,
       this.showBackButton = true});
@@ -62,7 +62,7 @@ class ZonerAppBar extends StatelessWidget {
         const Gap(kPadding8),
         Visibility(
           visible: showTitle!,
-          child: Text(pageTitle, style: theme.textTheme.displaySmall),
+          child: Text(pageTitle ?? "", style: theme.textTheme.displaySmall),
         ),
         const Gap(32),
       ],
