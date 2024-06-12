@@ -25,38 +25,41 @@ class PurchaseDetailsLstItem extends StatelessWidget {
       throw ErrorHint(
           "Cannot provide both an 'icon' and an 'iconPath' property, consider removing one");
     }
-    return Row(
-      children: [
-        Row(
-          children: [
-            Visibility(
-              visible: icon != null || iconPath != null,
-              child: icon != null
-                  ? Icon(
-                      icon,
-                      color: color ?? ZonerColors.neutral50,
-                    )
-                  : SvgPicture.asset(iconPath ?? "",
-                      colorFilter: ColorFilter.mode(
-                          color ?? ZonerColors.neutral50, BlendMode.srcIn)),
-            ),
-            const Gap(kPadding8),
-            Text(
-              label,
-              style: theme.textTheme.bodyMedium!
-                  .copyWith(color: ZonerColors.neutral50),
-            )
-          ],
-        ),
-        const Spacer(),
-        Text(
-          content,
-          style: theme.textTheme.bodyMedium!.copyWith(
-            fontWeight: FontWeight.w800,
-            //  color: theme.colorScheme.primary,
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: kPadding8),
+      child: Row(
+        children: [
+          Row(
+            children: [
+              Visibility(
+                visible: icon != null || iconPath != null,
+                child: icon != null
+                    ? Icon(
+                        icon,
+                        color: color ?? ZonerColors.neutral50,
+                      )
+                    : SvgPicture.asset(iconPath ?? "",
+                        colorFilter: ColorFilter.mode(
+                            color ?? ZonerColors.neutral50, BlendMode.srcIn)),
+              ),
+              const Gap(kPadding8),
+              Text(
+                label,
+                style: theme.textTheme.bodyMedium!
+                    .copyWith(color: ZonerColors.neutral50),
+              )
+            ],
           ),
-        )
-      ],
+          const Spacer(),
+          Text(
+            content,
+            style: theme.textTheme.bodyMedium!.copyWith(
+              fontWeight: FontWeight.w800,
+              //  color: theme.colorScheme.primary,
+            ),
+          )
+        ],
+      ),
     );
   }
 }
