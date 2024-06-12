@@ -15,4 +15,12 @@
     <style name="NormalTheme" parent="@android:style/Theme.Black.NoTitleBar">
         <item name="android:windowBackground">?android:colorBackground</item>
     </style>
+    <!--    Custom Zoner them with Android 12+ splash screen-->
+    <style name = "ZonerDarkTheme" parent="Theme.SplashScreen">
+
+        <item name="windowSplashScreenBackground">@color/zoner_purple</item>
+        <item name="windowSplashScreenAnimatedIcon" > @drawable/ic_launcher_foreground</item>
+        <item name="postSplashScreenTheme"> @style/NormalTheme</item>
+        <item name="splashScreenIconSize">@dimen/splashscreen_icon_size</item>
+    </style>
 </resources>
