@@ -30,7 +30,7 @@ class MedicationCartItem extends StatelessWidget {
                   fit: BoxFit.fill,
                 ),
               )),
-          Gap(kPadding16),
+          const Gap(kPadding16),
           Expanded(
             flex: 3,
             child: Column(
@@ -64,7 +64,7 @@ class MedicationCartItem extends StatelessWidget {
                         )),
                   ],
                 ),
-                Gap(kPadding16),
+                const Gap(kPadding16),
                 Row(
                   children: [
                     IconButton.filled(
@@ -76,13 +76,13 @@ class MedicationCartItem extends StatelessWidget {
                           FluentIcons.subtract_24_regular,
                           color: theme.colorScheme.primary,
                         )),
-                    Gap(kPadding16),
+                    const Gap(kPadding16),
                     Text(
                       "1",
                       style: theme.textTheme.bodyLarge!
                           .copyWith(fontWeight: FontWeight.w800),
                     ),
-                    Gap(kPadding16),
+                    const Gap(kPadding16),
                     IconButton(
                       style: IconButton.styleFrom(
                         backgroundColor: theme.cardColor,
@@ -95,14 +95,14 @@ class MedicationCartItem extends StatelessWidget {
                     ),
                   ],
                 ),
-                Gap(kPadding16),
+                const Gap(kPadding16),
                 Row(
                   children: [
                     Icon(
                       FluentIcons.wallet_24_regular,
                       color: theme.colorScheme.primary,
                     ),
-                    Gap(kPadding8),
+                    const Gap(kPadding8),
                     Text("12500 RWF",
                         style: theme.textTheme.bodyLarge!.copyWith(
                             fontWeight: FontWeight.w800,

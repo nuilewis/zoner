@@ -24,12 +24,12 @@ class SessionCartItem extends StatelessWidget {
         children: [
           Row(
             children: [
-              CircleAvatar(
+              const CircleAvatar(
                 backgroundImage: AssetImage("assets/images/memoji.jpg"),
                 radius: 38,
               ),
-              Gap(kPadding16),
-              Expanded(child: Text("Session with Dr Lucy")),
+              const Gap(kPadding16),
+              const Expanded(child: Text("Session with Dr Lucy")),
               IconButton(
                   onPressed: () {},
                   icon: Icon(
@@ -38,16 +38,16 @@ class SessionCartItem extends StatelessWidget {
                   )),
             ],
           ),
-          Gap(kPadding16),
-          PurchaseDetailsLstItem(
+          const Gap(kPadding16),
+          const PurchaseDetailsLstItem(
               icon: FluentIcons.calendar_24_regular,
               label: "Date",
               content: "Oct 03. 2024"),
-          PurchaseDetailsLstItem(
+          const PurchaseDetailsLstItem(
               icon: FluentIcons.clock_24_regular,
               label: "Time",
               content: "9:10 am"),
-          PurchaseDetailsLstItem(
+          const PurchaseDetailsLstItem(
               icon: FluentIcons.wallet_24_regular,
               label: "Amount",
               content: "2500 RWF"),
@@ -83,7 +83,7 @@ class MedicationCartItem extends StatelessWidget {
                   fit: BoxFit.fill,
                 ),
               )),
-          Gap(kPadding16),
+          const Gap(kPadding16),
           Expanded(
             flex: 3,
             child: Column(
@@ -117,7 +117,7 @@ class MedicationCartItem extends StatelessWidget {
                         )),
                   ],
                 ),
-                Gap(kPadding16),
+                const Gap(kPadding16),
                 Row(
                   children: [
                     IconButton.filled(
@@ -129,13 +129,13 @@ class MedicationCartItem extends StatelessWidget {
                           FluentIcons.subtract_24_regular,
                           color: theme.colorScheme.primary,
                         )),
-                    Gap(kPadding16),
+                    const Gap(kPadding16),
                     Text(
                       "1",
                       style: theme.textTheme.bodyLarge!
                           .copyWith(fontWeight: FontWeight.w800),
                     ),
-                    Gap(kPadding16),
+                    const Gap(kPadding16),
                     IconButton(
                       style: IconButton.styleFrom(
                         backgroundColor: theme.cardColor,
@@ -148,14 +148,14 @@ class MedicationCartItem extends StatelessWidget {
                     ),
                   ],
                 ),
-                Gap(kPadding16),
+                const Gap(kPadding16),
                 Row(
                   children: [
                     Icon(
                       FluentIcons.wallet_24_regular,
                       color: theme.colorScheme.primary,
                     ),
-                    Gap(kPadding8),
+                    const Gap(kPadding8),
                     Text("12500 RWF",
                         style: theme.textTheme.bodyLarge!.copyWith(
                             fontWeight: FontWeight.w800,

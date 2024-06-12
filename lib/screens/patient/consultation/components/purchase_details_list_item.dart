@@ -26,7 +26,7 @@ class PurchaseDetailsLstItem extends StatelessWidget {
           "Cannot provide both an 'icon' and an 'iconPath' property, consider removing one");
     }
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: kPadding8),
+      padding: const EdgeInsets.symmetric(vertical: kPadding12),
       child: Row(
         children: [
           Row(

@@ -1,8 +1,9 @@
 import 'package:calendar_view/calendar_view.dart';
 import 'package:flutter/material.dart';
-import 'package:zoner/core/core.dart';
-import 'package:zoner/core/routes.dart';
-import 'package:zoner/screens/patient/cart/cart.dart';
+import 'package:zoner/screens/patient/cart/checkout_mobile_money_screen.dart';
+
+import 'core/core.dart';
+import 'core/routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
             duration: const Duration(milliseconds: 300),
           ),
           //  routerConfig: appRouter.router,
-          home: const CartScreen()),
+          home: const CheckoutMobileMoneyScreen()),
     );
   }
 }
