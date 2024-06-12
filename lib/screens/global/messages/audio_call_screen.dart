@@ -1,12 +1,14 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../core/core.dart';
 import 'components/call_controls.dart';
 import 'components/call_timer.dart';
 
 class AudioCallScreen extends StatelessWidget {
+  static const String id = "audio_call";
   const AudioCallScreen({super.key});
 
   @override
@@ -28,7 +30,9 @@ class AudioCallScreen extends StatelessWidget {
                       elevation: 0,
                     ),
                     padding: EdgeInsets.zero,
-                    onPressed: () {},
+                    onPressed: () {
+                      context.pop();
+                    },
                     icon: const Icon(
                       FluentIcons.chevron_left_24_filled,
                       color: Colors.white,
@@ -37,7 +41,9 @@ class AudioCallScreen extends StatelessWidget {
                     style: IconButton.styleFrom(
                         backgroundColor: Colors.white.withOpacity(.2)),
                     padding: EdgeInsets.zero,
-                    onPressed: () {},
+                    onPressed: () {
+                      ///Todo: Trigger Side Bar
+                    },
                     icon: const Icon(FluentIcons.list_rtl_20_filled,
                         color: Colors.white)),
               ],

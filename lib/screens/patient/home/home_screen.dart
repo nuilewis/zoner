@@ -1,7 +1,10 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
+import 'package:zoner/screens/patient/discover/find_doctors_screen.dart';
 import 'package:zoner/screens/patient/sessions/components/session_card.dart';
+import 'package:zoner/screens/patient/sessions/session_details_screen.dart';
 
 import '../../../core/core.dart';
 import '../../doctor/profile/components/components.dart';
@@ -117,14 +120,20 @@ class HomeScreen extends StatelessWidget {
                       padding: const EdgeInsets.only(left: kPadding16),
                       sliver: SliverPrototypeExtentList.builder(
                           itemCount: 4,
-                          itemBuilder: (context, index) => const FittedBox(
+                          itemBuilder: (context, index) => FittedBox(
                                 child: SessionCard(
-                                  margin: EdgeInsets.only(right: kPadding16),
+                                  margin: const EdgeInsets.only(right: kPadding16),
                                   sessionState: SessionState.request,
+                                  onPressed: () {
+                                    context.pushNamed(SessionDetailsScreen.id);
+                                  },
                                 ),
                               ),
-                          prototypeItem: const SessionCard(
-                            margin: EdgeInsets.only(right: kPadding16),
+                          prototypeItem: SessionCard(
+                            onPressed: () {
+                              context.pushNamed(SessionDetailsScreen.id);
+                            },
+                            margin: const EdgeInsets.only(right: kPadding16),
                             sessionState: SessionState.request,
                           )),
                     ),
@@ -148,15 +157,22 @@ class HomeScreen extends StatelessWidget {
                   restorationId: "ongoing_sessions_list",
                   slivers: [
                     SliverPadding(
-                      padding: const EdgeInsets.symmetric(horizontal: kPadding16),
+                      padding:
+                          const EdgeInsets.symmetric(horizontal: kPadding16),
                       sliver: SliverPrototypeExtentList.builder(
-                        itemBuilder: (context, index) => const FittedBox(
+                        itemBuilder: (context, index) => FittedBox(
                           child: SessionCard(
-                            margin: EdgeInsets.only(right: kPadding16),
+                            onPressed: () {
+                              context.pushNamed(SessionDetailsScreen.id);
+                            },
+                            margin: const EdgeInsets.only(right: kPadding16),
                           ),
                         ),
-                        prototypeItem: const SessionCard(
-                          margin: EdgeInsets.only(right: kPadding16),
+                        prototypeItem: SessionCard(
+                          onPressed: () {
+                            context.pushNamed(SessionDetailsScreen.id);
+                          },
+                          margin: const EdgeInsets.only(right: kPadding16),
                         ),
                         itemCount: 3,
                       ),
@@ -178,6 +194,9 @@ class HomeScreen extends StatelessWidget {
                 child: Row(children: [
                   const Gap(kPadding16),
                   LargePillChips(
+                      onPressed: () {
+                        context.pushNamed(FindDoctorsScreen.id);
+                      },
                       color: theme.colorScheme.primary,
                       label: "Doctors",
                       icon: FluentIcons.person_24_filled),

@@ -1,9 +1,12 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 import 'package:zoner/core/constants.dart';
 import 'package:zoner/screens/components_global/components.dart';
 import 'package:zoner/screens/patient/consultation/components/components.dart';
+
+import '../../components_global/bottom_nav_bar.dart';
 
 class CheckoutSuccessScreen extends StatelessWidget {
   static const String id = "checkout_success";
@@ -95,7 +98,11 @@ class CheckoutSuccessScreen extends StatelessWidget {
                 icon: FluentIcons.pill_20_regular,
               ),
               const Spacer(),
-              ZonerButton(onPressed: () {}, label: "Done"),
+              ZonerButton(
+                  onPressed: () {
+                    context.goNamed(BottomNavBar.id);
+                  },
+                  label: "Go Home"),
               const Gap(kPadding64),
             ],
           ),

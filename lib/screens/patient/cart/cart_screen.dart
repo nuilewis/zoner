@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
+import 'package:zoner/screens/patient/cart/checkout_card_screen.dart';
+import 'package:zoner/screens/patient/cart/checkout_mobile_money_screen.dart';
 import 'package:zoner/screens/patient/cart/components/payment_method_selector_item.dart';
 
 import '../../../core/core.dart';
@@ -81,12 +84,22 @@ class CartScreen extends StatelessWidget {
                                 return ZonerBottomSheet(
                                   title: "How would you like yo pay?",
                                   onPressed: () {},
-                                  child: const Column(
+                                  child: Column(
                                     children: [
-                                      Gap(kPadding24),
-                                      PaymentMethodSelectorItem(),
-                                      Gap(kPadding16),
-                                      PaymentMethodSelectorItem(),
+                                      const Gap(kPadding24),
+                                      PaymentMethodSelectorItem(
+                                        onPressed: () {
+                                          context.pushNamed(
+                                              CheckoutMobileMoneyScreen.id);
+                                        },
+                                      ),
+                                      const Gap(kPadding16),
+                                      PaymentMethodSelectorItem(
+                                        onPressed: () {
+                                          context
+                                              .pushNamed(CheckoutCardScreen.id);
+                                        },
+                                      ),
                                     ],
                                   ),
                                 );

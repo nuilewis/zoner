@@ -7,6 +7,7 @@ import '../../../core/constants.dart';
 import '../../doctor/profile/components/components.dart';
 
 class QrResultProfile extends StatelessWidget {
+  static const String id = "qr_result";
   const QrResultProfile({super.key});
 
   @override

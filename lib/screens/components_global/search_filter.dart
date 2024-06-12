@@ -98,7 +98,7 @@ class _SearchFilterState extends State<SearchFilter>
                     ),
                     Wrap(
                       spacing: kPadding8,
-                      runSpacing: -4,
+                      runSpacing: 6,
                       children: [
                         ZonerChip(
                             onSelected: (isSelected) {},
@@ -128,7 +128,7 @@ class _SearchFilterState extends State<SearchFilter>
                     ),
                     Wrap(
                       spacing: kPadding8,
-                      runSpacing: -4,
+                      runSpacing: 6,
                       children: [
                         ZonerChip(
                             onSelected: (isSelected) {},

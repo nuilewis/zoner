@@ -1,12 +1,14 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 import 'package:zoner/core/constants.dart';
 
 import 'components/call_controls.dart';
 import 'components/call_timer.dart';
 
 class VideoCallScreen extends StatelessWidget {
+  static const String id = "video_call_screen";
   const VideoCallScreen({super.key});
 
   @override
@@ -26,7 +28,9 @@ class VideoCallScreen extends StatelessWidget {
                     elevation: 0,
                   ),
                   padding: EdgeInsets.zero,
-                  onPressed: () {},
+                  onPressed: () {
+                    context.pop();
+                  },
                   icon: const Icon(
                     FluentIcons.chevron_left_24_filled,
                     color: Colors.white,

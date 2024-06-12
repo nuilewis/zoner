@@ -11,8 +11,12 @@ enum SessionState { request, ongoing, completed }
 class SessionCard extends StatelessWidget {
   final SessionState sessionState;
   final EdgeInsetsGeometry? margin;
+  final VoidCallback onPressed;
   const SessionCard(
-      {super.key, this.sessionState = SessionState.ongoing, this.margin});
+      {super.key,
+      this.sessionState = SessionState.ongoing,
+      this.margin,
+      required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -88,9 +92,7 @@ class SessionCard extends StatelessWidget {
                 ),
                 const Spacer(),
                 ZonerButton(
-                  onPressed: () {
-                    ///Todo: View Session Details
-                  },
+                  onPressed: onPressed,
                   label: "View",
                   isChipButton: true,
                 ),

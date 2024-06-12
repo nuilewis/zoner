@@ -1,12 +1,14 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 import 'package:zoner/core/constants.dart';
 import 'package:zoner/screens/global/messages/components/message_form_field.dart';
 
 import 'components/message_bubbles.dart';
 
 class ChatScreen extends StatelessWidget {
+  static const String id = "chat";
   const ChatScreen({super.key});
 
   @override
@@ -26,7 +28,9 @@ class ChatScreen extends StatelessWidget {
                         backgroundColor: isDarkMode
                             ? ZonerColors.neutral20
                             : ZonerColors.neutral95),
-                    onPressed: () {},
+                    onPressed: () {
+                      context.pop();
+                    },
                     icon: const Icon(FluentIcons.chevron_left_24_regular)),
                 const Spacer(),
                 IconButton.filled(

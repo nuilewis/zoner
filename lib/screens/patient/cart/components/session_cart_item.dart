@@ -13,7 +13,8 @@ class SessionCartItem extends StatelessWidget {
     final ThemeData theme = Theme.of(context);
     final bool isDarkMode = theme.brightness == Brightness.dark;
     return Container(
-      padding: const EdgeInsets.all(kPadding16),
+      padding: const EdgeInsets.symmetric(
+          horizontal: kPadding16, vertical: kPadding8),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(kPadding24),
           border: Border.all(

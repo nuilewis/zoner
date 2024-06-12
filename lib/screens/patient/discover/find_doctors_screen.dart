@@ -2,8 +2,11 @@ import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 import 'package:zoner/screens/components_global/search_filter.dart';
+import 'package:zoner/screens/patient/cart/cart_screen.dart';
 import 'package:zoner/screens/patient/consultation/components/components.dart';
+import 'package:zoner/screens/patient/discover/doctor_profile_screen.dart';
 
 import '../../../core/core.dart';
 import '../../components_global/components.dart';
@@ -40,29 +43,35 @@ class _FindDoctorsScreenState extends State<FindDoctorsScreen>
   @override
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
-    //final bool isDarkMode = theme.brightness == Brightness.dark;
+    final bool isDarkMode = theme.brightness == Brightness.dark;
     return Scaffold(
       body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            ZonerAppBar(
-              pageTitle: "Find\nDoctors",
-              actions: [
-                IconButton(
-                  onPressed: () {},
-                  icon: const Icon(FluentIcons.cart_24_regular),
-                ),
-                IconButton(
-                  onPressed: () {},
-                  icon: const Icon(FluentIcons.list_rtl_20_regular),
-                )
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Column(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: kPadding16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              ZonerAppBar(
+                pageTitle: "Find\nDoctors",
+                actions: [
+                  IconButton.filled(
+                    style: IconButton.styleFrom(
+                      backgroundColor: isDarkMode
+                          ? ZonerColors.neutral20
+                          : ZonerColors.neutral95,
+                    ),
+                    onPressed: () {
+                      context.pushNamed(CartScreen.id);
+                    },
+                    icon: const Icon(FluentIcons.cart_24_regular),
+                  ),
+                ],
+              ),
+
+              ///Search Filter Widget and Animation
+              ///Todo: Move this into the Zoner Search Widget itself
+              Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
                 children: [
@@ -83,7 +92,8 @@ class _FindDoctorsScreenState extends State<FindDoctorsScreen>
                   ),
                   const Gap(kPadding8),
                   Wrap(
-                    spacing: 8,
+                    spacing: kPadding16,
+                    runSpacing: kPadding16,
                     children: [
                       IconButton.filled(
                           style: IconButton.styleFrom(
@@ -136,16 +146,19 @@ class _FindDoctorsScreenState extends State<FindDoctorsScreen>
                       padding: EdgeInsets.zero,
                       physics: const NeverScrollableScrollPhysics(),
                       shrinkWrap: true,
-                      itemBuilder: (context, index) =>
-                          const DoctorSearchResultCard(),
+                      itemBuilder: (context, index) => DoctorSearchResultCard(
+                            onPressed: () {
+                              context.pushNamed(DoctorProfileScreen.id);
+                            },
+                          ),
                       separatorBuilder: (context, index) =>
                           const Gap(kPadding8),
                       itemCount: 5),
                   const Gap(kPadding64),
                 ],
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
       ),
     );

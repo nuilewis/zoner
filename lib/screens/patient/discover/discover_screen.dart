@@ -1,8 +1,10 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 import 'package:zoner/core/core.dart';
 import 'package:zoner/screens/components_global/components.dart';
+import 'package:zoner/screens/patient/discover/hospital_details_screen.dart';
 
 import 'components/facility_card.dart';
 
@@ -96,7 +98,10 @@ class DiscoverScreen extends StatelessWidget {
               child: ListView.separated(
                   padding: const EdgeInsets.symmetric(horizontal: kPadding16),
                   scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) => const FacilityCard(
+                  itemBuilder: (context, index) => FacilityCard(
+                      onPressed: () {
+                        context.pushNamed(HospitalDetailsScreen.id);
+                      },
                       label: "Bamenda Regional Hospital",
                       imagePath: "assets/images/image.jpg"),
                   separatorBuilder: (context, index) => const Gap(kPadding16),
@@ -121,7 +126,10 @@ class DiscoverScreen extends StatelessWidget {
               child: ListView.separated(
                   padding: const EdgeInsets.symmetric(horizontal: kPadding16),
                   scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) => const FacilityCard(
+                  itemBuilder: (context, index) => FacilityCard(
+                      onPressed: () {
+                        context.pushNamed(HospitalDetailsScreen.id);
+                      },
                       label: "Zoner Pharmacy",
                       imagePath: "assets/images/image.jpg"),
                   separatorBuilder: (context, index) => const Gap(kPadding16),
@@ -146,7 +154,10 @@ class DiscoverScreen extends StatelessWidget {
               child: ListView.separated(
                   padding: const EdgeInsets.symmetric(horizontal: kPadding16),
                   scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) => const FacilityCard(
+                  itemBuilder: (context, index) => FacilityCard(
+                      onPressed: () {
+                        context.pushNamed(HospitalDetailsScreen.id);
+                      },
                       label: "Zoner Labs",
                       imagePath: "assets/images/image.jpg"),
                   separatorBuilder: (context, index) => const Gap(kPadding16),

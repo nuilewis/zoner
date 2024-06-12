@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:zoner/screens/auth/auth.dart';
 
 import 'components/onboarding_page.dart';
 
@@ -36,7 +38,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             title: onboardingData[index]["title"]!,
             text: onboardingData[index]["text"]!,
             onSkipPressed: () {
-              ///Todo: Navigate to sign in page
+              context.pushReplacementNamed(SignInScreen.id);
             },
             onPreviousPressed: () {
               _pageController.previousPage(
@@ -48,7 +50,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             onNextPressed: () {
               ///If current index is the last item, then navigate to the sign up page instead
               if (index == onboardingData.length - 1) {
-                ///Todo: Navigate to sign in page instead
+                context.pushNamed(SignInScreen.id);
               } else {
                 _pageController.nextPage(
                     duration: const Duration(

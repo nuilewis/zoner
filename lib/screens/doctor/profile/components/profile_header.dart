@@ -10,6 +10,7 @@ class ProfileHeader extends StatelessWidget {
   final String name;
   final String title;
   final VoidCallback? onVideoCallPressed;
+  final VoidCallback? onAudioCallPressed;
   final VoidCallback? onMessagePressed;
   final ImageProvider backgroundImage;
   final ImageProvider profileImage;
@@ -19,6 +20,7 @@ class ProfileHeader extends StatelessWidget {
       required this.title,
       this.onVideoCallPressed,
       this.onMessagePressed,
+      this.onAudioCallPressed,
       required this.backgroundImage,
       required this.profileImage});
 
@@ -67,6 +69,15 @@ class ProfileHeader extends StatelessWidget {
                 ],
               ),
               const Spacer(),
+              IconButton.filled(
+                  onPressed: onAudioCallPressed,
+                  style: IconButton.styleFrom(
+                    backgroundColor: theme.cardColor,
+                    fixedSize: const Size.square(48),
+                  ),
+                  icon: Icon(FluentIcons.call_24_regular,
+                      color: theme.colorScheme.primary)),
+              const Gap(kPadding8),
               IconButton.filled(
                 onPressed: onVideoCallPressed,
                 style: IconButton.styleFrom(

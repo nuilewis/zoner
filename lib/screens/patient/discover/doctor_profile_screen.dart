@@ -1,10 +1,14 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 import 'package:zoner/core/constants.dart';
 import 'package:zoner/screens/components_global/components.dart';
+import 'package:zoner/screens/global/messages/video_call_screen.dart';
 
 import '../../doctor/profile/components/components.dart';
+import '../../global/messages/audio_call_screen.dart';
+import '../../global/messages/chat_screen.dart';
 
 class DoctorProfileScreen extends StatelessWidget {
   static const String id = "doctor_profile";
@@ -26,10 +30,13 @@ class DoctorProfileScreen extends StatelessWidget {
               backgroundImage: const AssetImage("assets/images/memoji.jpg"),
               profileImage: const AssetImage("assets/images/memoji.jpg"),
               onMessagePressed: () {
-                ///Todo: Trigger Messaging,
+                context.pushNamed(ChatScreen.id);
+              },
+              onAudioCallPressed: () {
+                context.pushNamed(AudioCallScreen.id);
               },
               onVideoCallPressed: () {
-                ///Todo: Video calling
+                context.pushNamed(VideoCallScreen.id);
               },
             ),
 

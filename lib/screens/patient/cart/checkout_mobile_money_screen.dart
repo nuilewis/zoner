@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
+import 'package:zoner/screens/patient/cart/checkout_success_screen.dart';
 import 'package:zoner/screens/patient/cart/components/payment_method_selector_item.dart';
 
 import '../../../core/core.dart';
@@ -55,7 +57,9 @@ class _CheckoutMobileMoneyScreenState extends State<CheckoutMobileMoneyScreen> {
                         fontFamily: "Plus Jakarta Sans")),
               ),
               const Gap(kPadding24),
-              const PaymentMethodSelectorItem(),
+              PaymentMethodSelectorItem(
+                onPressed: () {},
+              ),
               const Gap(kPadding24),
               const Align(
                   alignment: Alignment.center,
@@ -107,6 +111,7 @@ class _CheckoutMobileMoneyScreenState extends State<CheckoutMobileMoneyScreen> {
               ZonerButton(
                 onPressed: () {
                   // Handle checkout action
+                  context.pushNamed(CheckoutSuccessScreen.id);
                 },
                 label: "Checkout",
               ),

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 import 'package:zoner/core/core.dart';
 import 'package:zoner/screens/components_global/components.dart';
+import 'package:zoner/screens/patient/sessions/session_details_screen.dart';
 
 import 'components/session_card.dart';
 
@@ -40,7 +42,10 @@ class SessionsScreen extends StatelessWidget {
                   },
                   itemCount: 3,
                   itemBuilder: (context, index) {
-                    return const SessionCard(
+                    return SessionCard(
+                      onPressed: () {
+                        context.pushNamed(SessionDetailsScreen.id);
+                      },
                       sessionState: SessionState.request,
                     );
                   }),
@@ -64,7 +69,10 @@ class SessionsScreen extends StatelessWidget {
                   },
                   itemCount: 3,
                   itemBuilder: (context, index) {
-                    return const SessionCard(
+                    return SessionCard(
+                      onPressed: () {
+                        context.pushNamed(SessionDetailsScreen.id);
+                      },
                       sessionState: SessionState.ongoing,
                     );
                   }),
@@ -87,7 +95,10 @@ class SessionsScreen extends StatelessWidget {
                 },
                 itemCount: 3,
                 itemBuilder: (context, index) {
-                  return const SessionCard(
+                  return SessionCard(
+                    onPressed: () {
+                      context.pushNamed(SessionDetailsScreen.id);
+                    },
                     sessionState: SessionState.completed,
                   );
                 }),
