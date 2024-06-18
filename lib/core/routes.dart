@@ -1,8 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
-import 'package:zoner/screens/global/messages/chat_screen.dart';
-import 'package:zoner/screens/global/messages/messages_screen.dart';
-import 'package:zoner/screens/global/messages/video_call_screen.dart';
 import 'package:zoner/screens/patient/cart/cart_screen.dart';
 import 'package:zoner/screens/patient/cart/checkout_card_screen.dart';
 import 'package:zoner/screens/patient/cart/checkout_failed_screen.dart';
@@ -17,11 +14,10 @@ import 'package:zoner/screens/patient/discover/scan_qr_screen.dart';
 import 'package:zoner/screens/patient/sessions/session_details_screen.dart';
 import 'package:zoner/screens/patient/sessions/sessions_screen.dart';
 
-import '../screens/auth/auth.dart';
-import '../screens/auth/onboarding/onboarding.dart';
 import '../screens/components_global/bottom_nav_bar.dart';
-import '../screens/global/messages/audio_call_screen.dart';
 import '../screens/patient/home/home_screen.dart';
+import '../screens/shared/auth/auth.dart';
+import '../screens/shared/messages/messages.dart';
 
 class AppRouter {
   final GoRouter router = GoRouter(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:zoner/screens/auth/auth.dart';
 
+import '../auth.dart';
 import 'components/onboarding_page.dart';
 
 class OnboardingScreen extends StatefulWidget {

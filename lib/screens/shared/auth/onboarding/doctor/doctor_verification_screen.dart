@@ -2,8 +2,8 @@ import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-import '../../../../core/core.dart';
-import '../../../components_global/components.dart';
+import '../../../../../core/core.dart';
+import '../../../../components_global/components.dart';
 
 class DoctorVerificationScreen extends StatefulWidget {
   static const String id = "doctor_verification";

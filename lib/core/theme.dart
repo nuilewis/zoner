@@ -34,27 +34,25 @@ class ZonerThemeData {
     fontFamily: 'Plus Jakarta Sans',
     textTheme: TextTheme(
       displayLarge:
-          ZonerTextStyles.displayLargeAlt.copyWith(color: ZonerColors.black),
+          ZonerTextStyles.displayLarge.copyWith(color: ZonerColors.black),
       displayMedium:
-          ZonerTextStyles.displayMediumAlt.copyWith(color: ZonerColors.black),
+          ZonerTextStyles.displayMedium.copyWith(color: ZonerColors.black),
       displaySmall:
-          ZonerTextStyles.displaySmallAlt.copyWith(color: ZonerColors.black),
+          ZonerTextStyles.displaySmall.copyWith(color: ZonerColors.black),
 
       ///
       headlineLarge:
-          ZonerTextStyles.headlineLargeAlt.copyWith(color: ZonerColors.black),
+          ZonerTextStyles.headlineLarge.copyWith(color: ZonerColors.black),
       headlineSmall:
-          ZonerTextStyles.headlineSmallAlt.copyWith(color: ZonerColors.black),
+          ZonerTextStyles.headlineSmall.copyWith(color: ZonerColors.black),
       headlineMedium:
-          ZonerTextStyles.headlineMediumAlt.copyWith(color: ZonerColors.black),
+          ZonerTextStyles.headlineMedium.copyWith(color: ZonerColors.black),
 
       ///
-      titleLarge:
-          ZonerTextStyles.titleLargeAlt.copyWith(color: ZonerColors.black),
+      titleLarge: ZonerTextStyles.titleLarge.copyWith(color: ZonerColors.black),
       titleMedium:
-          ZonerTextStyles.titleMediumAlt.copyWith(color: ZonerColors.black),
-      titleSmall:
-          ZonerTextStyles.titleSmallAlt.copyWith(color: ZonerColors.black),
+          ZonerTextStyles.titleMedium.copyWith(color: ZonerColors.black),
+      titleSmall: ZonerTextStyles.titleSmall.copyWith(color: ZonerColors.black),
 
       ///
       bodyLarge: ZonerTextStyles.bodyLarge.copyWith(color: ZonerColors.black),
@@ -195,27 +193,25 @@ class ZonerThemeData {
     fontFamily: 'Plus Jakarta Sans',
     textTheme: TextTheme(
       displayLarge:
-          ZonerTextStyles.displayLargeAlt.copyWith(color: ZonerColors.white),
+          ZonerTextStyles.displayLarge.copyWith(color: ZonerColors.white),
       displayMedium:
-          ZonerTextStyles.displayMediumAlt.copyWith(color: ZonerColors.white),
+          ZonerTextStyles.displayMedium.copyWith(color: ZonerColors.white),
       displaySmall:
-          ZonerTextStyles.displaySmallAlt.copyWith(color: ZonerColors.white),
+          ZonerTextStyles.displaySmall.copyWith(color: ZonerColors.white),
 
       ///
       headlineLarge:
-          ZonerTextStyles.headlineLargeAlt.copyWith(color: ZonerColors.white),
+          ZonerTextStyles.headlineLarge.copyWith(color: ZonerColors.white),
       headlineSmall:
-          ZonerTextStyles.headlineSmallAlt.copyWith(color: ZonerColors.white),
+          ZonerTextStyles.headlineSmall.copyWith(color: ZonerColors.white),
       headlineMedium:
-          ZonerTextStyles.headlineMediumAlt.copyWith(color: ZonerColors.white),
+          ZonerTextStyles.headlineMedium.copyWith(color: ZonerColors.white),
 
       ///
-      titleLarge:
-          ZonerTextStyles.titleLargeAlt.copyWith(color: ZonerColors.white),
+      titleLarge: ZonerTextStyles.titleLarge.copyWith(color: ZonerColors.white),
       titleMedium:
-          ZonerTextStyles.titleMediumAlt.copyWith(color: ZonerColors.white),
-      titleSmall:
-          ZonerTextStyles.titleSmallAlt.copyWith(color: ZonerColors.white),
+          ZonerTextStyles.titleMedium.copyWith(color: ZonerColors.white),
+      titleSmall: ZonerTextStyles.titleSmall.copyWith(color: ZonerColors.white),
 
       ///
       bodyLarge: ZonerTextStyles.bodyLarge.copyWith(color: ZonerColors.white),

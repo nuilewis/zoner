@@ -3,30 +3,33 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:zoner/core/core.dart';
-import 'package:zoner/screens/auth/auth.dart';
 import 'package:zoner/screens/components_global/components.dart';
 
-import '../components_global/bottom_nav_bar.dart';
+import 'auth.dart';
 
-class SignInScreen extends StatefulWidget {
-  static const String id = "sign_in";
-  const SignInScreen({super.key});
+class RegisterScreen extends StatefulWidget {
+  static const String id = "register";
+  const RegisterScreen({super.key});
 
   @override
-  State<SignInScreen> createState() => _SignInScreenState();
+  State<RegisterScreen> createState() => _RegisterScreenState();
 }
 
-class _SignInScreenState extends State<SignInScreen> {
+class _RegisterScreenState extends State<RegisterScreen> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  bool _obscureText = true;
+  final TextEditingController confirmPasswordController =
+      TextEditingController();
+  bool _obscurePasswordField = true;
+  bool _obscureConfirmPasswordField = true;
 
   @override
   void dispose() {
     super.dispose();
     emailController.dispose();
     passwordController.dispose();
+    confirmPasswordController.dispose();
   }
 
   @override
@@ -41,7 +44,7 @@ class _SignInScreenState extends State<SignInScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const ZonerAppBar(pageTitle: "Sign in"),
+              const ZonerAppBar(pageTitle: "Register"),
               const Text("Email"),
               const Gap(kPadding8),
               TextFormField(
@@ -67,18 +70,18 @@ class _SignInScreenState extends State<SignInScreen> {
               TextFormField(
                 controller: passwordController,
                 keyboardType: TextInputType.visiblePassword,
-                obscureText: _obscureText,
+                obscureText: _obscurePasswordField,
                 decoration:
                     ZonerInputDecoration.inputDecoration(context).copyWith(
                         hintText: "Password",
                         suffixIcon: IconButton(
                             onPressed: () {
                               setState(() {
-                                _obscureText = !_obscureText;
+                                _obscurePasswordField = !_obscurePasswordField;
                               });
                             },
                             icon: Icon(
-                              _obscureText
+                              _obscurePasswordField
                                   ? FluentIcons.eye_24_regular
                                   : FluentIcons.eye_off_24_regular,
                               color: theme.colorScheme.primary,
@@ -95,6 +98,41 @@ class _SignInScreenState extends State<SignInScreen> {
                   }
                 },
               ),
+              const Gap(kPadding16),
+              const Text("Confirm Password"),
+              const Gap(kPadding8),
+              TextFormField(
+                controller: confirmPasswordController,
+                keyboardType: TextInputType.visiblePassword,
+                obscureText: _obscureConfirmPasswordField,
+                decoration:
+                    ZonerInputDecoration.inputDecoration(context).copyWith(
+                        hintText: "Confirm Password",
+                        suffixIcon: IconButton(
+                            onPressed: () {
+                              setState(() {
+                                _obscureConfirmPasswordField =
+                                    !_obscureConfirmPasswordField;
+                              });
+                            },
+                            icon: Icon(
+                              _obscureConfirmPasswordField
+                                  ? FluentIcons.eye_24_regular
+                                  : FluentIcons.eye_off_24_regular,
+                              color: theme.colorScheme.primary,
+                            ))),
+                validator: (value) {
+                  ///Todo: probably find a better regex for validating emails
+                  if (value == null || value.isEmpty) {
+                    return "Please input a password";
+                  }
+                  if (value.trim() != passwordController.text.trim()) {
+                    return "Password does not match";
+                  } else {
+                    return null;
+                  }
+                },
+              ),
               const Spacer(),
               ZonerButton(
                   onPressed: () {
@@ -103,10 +141,8 @@ class _SignInScreenState extends State<SignInScreen> {
 
                       context.pushReplacementNamed(BottomNavBar.id);
                     }
-
-                    /// Just go to patient home page for now
                   },
-                  label: "Sign in"),
+                  label: "Create Account"),
               const Gap(kPadding16),
               ZonerButton(
                 iconPath: "assets/svg/google.svg",
@@ -114,6 +150,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 label: "Continue With Google",
                 buttonType: AppButtonType.secondary,
               ),
+              const Gap(kPadding8),
               const Gap(kPadding16),
               const Align(alignment: Alignment.center, child: Text("or")),
               Align(
@@ -121,10 +158,10 @@ class _SignInScreenState extends State<SignInScreen> {
                 child: FittedBox(
                   child: ZonerButton(
                     onPressed: () {
-                      context.pushNamed(RegisterScreen.id);
+                      context.pushNamed(SignInScreen.id);
                     },
                     buttonType: AppButtonType.text,
-                    label: "Create an Account",
+                    label: "Sign In Instead",
                   ),
                 ),
               ),

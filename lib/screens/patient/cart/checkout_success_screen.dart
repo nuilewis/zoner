@@ -6,8 +6,6 @@ import 'package:zoner/core/constants.dart';
 import 'package:zoner/screens/components_global/components.dart';
 import 'package:zoner/screens/patient/consultation/components/components.dart';
 
-import '../../components_global/bottom_nav_bar.dart';
-
 class CheckoutSuccessScreen extends StatelessWidget {
   static const String id = "checkout_success";
   const CheckoutSuccessScreen({super.key});

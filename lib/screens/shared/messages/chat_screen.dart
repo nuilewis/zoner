@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:zoner/core/constants.dart';
-import 'package:zoner/screens/global/messages/components/message_form_field.dart';
 
 import 'components/message_bubbles.dart';
+import 'components/message_form_field.dart';
 
 class ChatScreen extends StatelessWidget {
   static const String id = "chat";

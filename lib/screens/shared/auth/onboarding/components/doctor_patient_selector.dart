@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gap/gap.dart';
 
-import '../../../../core/core.dart';
+import '../../../../../core/core.dart';
 import 'doctor_patient_selector_card.dart';
 
 class DoctorPatientSelector extends StatefulWidget {

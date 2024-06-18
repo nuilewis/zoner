@@ -2,7 +2,7 @@ import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-import '../../../../core/core.dart';
+import '../../../../../core/core.dart';
 
 class OnboardingPage extends StatelessWidget {
   final String title;

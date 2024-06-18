@@ -5,32 +5,27 @@ import 'package:go_router/go_router.dart';
 import 'package:zoner/core/core.dart';
 import 'package:zoner/screens/components_global/components.dart';
 
-import '../components_global/bottom_nav_bar.dart';
 import 'auth.dart';
 
-class RegisterScreen extends StatefulWidget {
-  static const String id = "register";
-  const RegisterScreen({super.key});
+class SignInScreen extends StatefulWidget {
+  static const String id = "sign_in";
+  const SignInScreen({super.key});
 
   @override
-  State<RegisterScreen> createState() => _RegisterScreenState();
+  State<SignInScreen> createState() => _SignInScreenState();
 }
 
-class _RegisterScreenState extends State<RegisterScreen> {
+class _SignInScreenState extends State<SignInScreen> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  final TextEditingController confirmPasswordController =
-      TextEditingController();
-  bool _obscurePasswordField = true;
-  bool _obscureConfirmPasswordField = true;
+  bool _obscureText = true;
 
   @override
   void dispose() {
     super.dispose();
     emailController.dispose();
     passwordController.dispose();
-    confirmPasswordController.dispose();
   }
 
   @override
@@ -45,7 +40,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const ZonerAppBar(pageTitle: "Register"),
+              const ZonerAppBar(pageTitle: "Sign in"),
               const Text("Email"),
               const Gap(kPadding8),
               TextFormField(
@@ -71,18 +66,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
               TextFormField(
                 controller: passwordController,
                 keyboardType: TextInputType.visiblePassword,
-                obscureText: _obscurePasswordField,
+                obscureText: _obscureText,
                 decoration:
                     ZonerInputDecoration.inputDecoration(context).copyWith(
                         hintText: "Password",
                         suffixIcon: IconButton(
                             onPressed: () {
                               setState(() {
-                                _obscurePasswordField = !_obscurePasswordField;
+                                _obscureText = !_obscureText;
                               });
                             },
                             icon: Icon(
-                              _obscurePasswordField
+                              _obscureText
                                   ? FluentIcons.eye_24_regular
                                   : FluentIcons.eye_off_24_regular,
                               color: theme.colorScheme.primary,
@@ -99,41 +94,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   }
                 },
               ),
-              const Gap(kPadding16),
-              const Text("Confirm Password"),
-              const Gap(kPadding8),
-              TextFormField(
-                controller: confirmPasswordController,
-                keyboardType: TextInputType.visiblePassword,
-                obscureText: _obscureConfirmPasswordField,
-                decoration:
-                    ZonerInputDecoration.inputDecoration(context).copyWith(
-                        hintText: "Confirm Password",
-                        suffixIcon: IconButton(
-                            onPressed: () {
-                              setState(() {
-                                _obscureConfirmPasswordField =
-                                    !_obscureConfirmPasswordField;
-                              });
-                            },
-                            icon: Icon(
-                              _obscureConfirmPasswordField
-                                  ? FluentIcons.eye_24_regular
-                                  : FluentIcons.eye_off_24_regular,
-                              color: theme.colorScheme.primary,
-                            ))),
-                validator: (value) {
-                  ///Todo: probably find a better regex for validating emails
-                  if (value == null || value.isEmpty) {
-                    return "Please input a password";
-                  }
-                  if (value.trim() != passwordController.text.trim()) {
-                    return "Password does not match";
-                  } else {
-                    return null;
-                  }
-                },
-              ),
               const Spacer(),
               ZonerButton(
                   onPressed: () {
@@ -142,8 +102,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
                       context.pushReplacementNamed(BottomNavBar.id);
                     }
+
+                    /// Just go to patient home page for now
                   },
-                  label: "Create Account"),
+                  label: "Sign in"),
               const Gap(kPadding16),
               ZonerButton(
                 iconPath: "assets/svg/google.svg",
@@ -151,7 +113,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 label: "Continue With Google",
                 buttonType: AppButtonType.secondary,
               ),
-              const Gap(kPadding8),
               const Gap(kPadding16),
               const Align(alignment: Alignment.center, child: Text("or")),
               Align(
@@ -159,10 +120,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 child: FittedBox(
                   child: ZonerButton(
                     onPressed: () {
-                      context.pushNamed(SignInScreen.id);
+                      context.pushNamed(RegisterScreen.id);
                     },
                     buttonType: AppButtonType.text,
-                    label: "Sign In Instead",
+                    label: "Create an Account",
                   ),
                 ),
               ),

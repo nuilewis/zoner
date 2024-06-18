@@ -4,11 +4,9 @@ import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:zoner/core/constants.dart';
 import 'package:zoner/screens/components_global/components.dart';
-import 'package:zoner/screens/global/messages/video_call_screen.dart';
 
 import '../../doctor/profile/components/components.dart';
-import '../../global/messages/audio_call_screen.dart';
-import '../../global/messages/chat_screen.dart';
+import '../../shared/messages/messages.dart';
 
 class DoctorProfileScreen extends StatelessWidget {
   static const String id = "doctor_profile";
