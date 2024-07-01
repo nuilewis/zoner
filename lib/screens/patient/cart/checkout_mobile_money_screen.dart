@@ -5,7 +5,7 @@ import 'package:zoner/screens/patient/cart/checkout_success_screen.dart';
 import 'package:zoner/screens/patient/cart/components/payment_method_selector_item.dart';
 
 import '../../../core/core.dart';
-import '../../components_global/components.dart';
+import '../../shared/components_global/components.dart';
 
 class CheckoutMobileMoneyScreen extends StatefulWidget {
   static const id = "checkout_momo";

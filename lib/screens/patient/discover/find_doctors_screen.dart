@@ -3,13 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
-import 'package:zoner/screens/components_global/search_filter.dart';
+import 'package:zoner/screens/doctor/profile/doctor_profile_screen.dart';
 import 'package:zoner/screens/patient/cart/cart_screen.dart';
-import 'package:zoner/screens/patient/consultation/components/components.dart';
-import 'package:zoner/screens/patient/discover/doctor_profile_screen.dart';
 
 import '../../../core/core.dart';
-import '../../components_global/components.dart';
+import '../../shared/components_global/components.dart';
+import 'components/doctor_search_result_card.dart';
 
 class FindDoctorsScreen extends StatefulWidget {
   static const String id = "find_doctor";

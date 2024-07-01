@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:zoner/core/constants.dart';
-import 'package:zoner/screens/components_global/components.dart';
 import 'package:zoner/screens/patient/discover/qr_result_profile.dart';
+
+import '../../shared/components_global/components.dart';
 
 class ScanQrScreen extends StatelessWidget {
   static const id = "scan_qr";

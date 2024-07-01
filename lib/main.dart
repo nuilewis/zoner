@@ -1,6 +1,6 @@
 import 'package:calendar_view/calendar_view.dart';
 import 'package:flutter/material.dart';
-import 'package:zoner/screens/doctor/home/doctor_home_screen.dart';
+import 'package:zoner/screens/doctor/sessions/doctor_session_details_screen.dart';
 
 import 'core/core.dart';
 import 'core/routes.dart';
@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
           duration: const Duration(milliseconds: 300),
         ),
         // routerConfig: appRouter.router,
-        home: const DoctorHomeScreen(),
+        home: const DoctorSessionDetailsScreen(),
       ),
     );
   }

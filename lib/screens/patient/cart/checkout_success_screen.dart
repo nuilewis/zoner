@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:zoner/core/constants.dart';
-import 'package:zoner/screens/components_global/components.dart';
 import 'package:zoner/screens/patient/consultation/components/components.dart';
+
+import '../../shared/components_global/components.dart';
 
 class CheckoutSuccessScreen extends StatelessWidget {
   static const String id = "checkout_success";

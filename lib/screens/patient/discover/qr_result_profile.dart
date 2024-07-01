@@ -1,10 +1,10 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:zoner/screens/components_global/components.dart';
 
 import '../../../core/constants.dart';
 import '../../doctor/profile/components/components.dart';
+import '../../shared/components_global/components.dart';
 
 class QrResultProfile extends StatelessWidget {
   static const String id = "qr_result";

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 import '../../../../core/core.dart';
-import '../../../components_global/components.dart';
+import '../../../shared/components_global/components.dart';
 
 class SessionTestListItem extends StatelessWidget {
   final String testName;
@@ -28,7 +28,8 @@ class SessionTestListItem extends StatelessWidget {
                 color:
                     isDarkMode ? ZonerColors.neutral20 : ZonerColors.neutral95,
                 shape: BoxShape.circle),
-            child: const ZonerIcon(size: 20, icon: FluentIcons.beaker_16_regular),
+            child:
+                const ZonerIcon(size: 20, icon: FluentIcons.beaker_16_regular),
           ),
           const Gap(kPadding16),
           Text(testName),

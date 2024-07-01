@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 import '../../../core/core.dart';
-import '../../components_global/components.dart';
+import '../../shared/components_global/components.dart';
 
 class CheckoutFailedScreen extends StatelessWidget {
   static const String id = "checkout_failed";

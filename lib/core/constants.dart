@@ -55,6 +55,47 @@ class ZonerInputDecoration {
         labelStyle:
             ZonerTextStyles.bodyMedium.copyWith(color: ZonerColors.black));
   }
+
+  static InputDecorationTheme inputDecorationTheme(BuildContext context) {
+    return InputDecorationTheme(
+      constraints: const BoxConstraints(maxHeight: 48),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+      errorStyle: ZonerTextStyles.bodyMedium
+          .copyWith(color: Theme.of(context).colorScheme.error),
+      errorBorder: OutlineInputBorder(
+        gapPadding: 4,
+        borderSide:
+            BorderSide(color: Theme.of(context).colorScheme.error, width: 1),
+        borderRadius: BorderRadius.circular(12),
+      ),
+      border: OutlineInputBorder(
+        gapPadding: 0,
+        borderSide: BorderSide.none,
+        borderRadius: BorderRadius.circular(12),
+      ),
+      enabledBorder: OutlineInputBorder(
+        gapPadding: 0,
+        borderSide: BorderSide.none,
+        borderRadius: BorderRadius.circular(12),
+      ),
+      disabledBorder: OutlineInputBorder(
+        gapPadding: 0,
+        borderSide: BorderSide.none,
+        borderRadius: BorderRadius.circular(12),
+      ),
+      focusedBorder: OutlineInputBorder(
+        gapPadding: 0,
+        borderSide: const BorderSide(width: 1, color: ZonerColors.purple70),
+        borderRadius: BorderRadius.circular(12),
+      ),
+      filled: true,
+      isDense: true,
+      fillColor: Theme.of(context).brightness == Brightness.light
+          ? ZonerColors.neutral95
+          : ZonerColors.neutral20,
+      suffixIconColor: Theme.of(context).colorScheme.primary,
+    );
+  }
 }
 
 ///------Colors-------///
@@ -170,21 +211,10 @@ class ZonerColors {
 ///------Text Styles-------///
 class ZonerTextStyles {
   ///---Display---//
-  static TextStyle displayLargeAlt = const TextStyle(
-    fontFamily: "Gloock",
-    fontSize: 57,
-    height: 1,
-  );
 
   static TextStyle displayLarge = const TextStyle(
     fontWeight: FontWeight.normal,
     fontSize: 57,
-    height: 1,
-  );
-
-  static TextStyle displayMediumAlt = const TextStyle(
-    fontFamily: "Gloock",
-    fontSize: 45,
     height: 1,
   );
 
@@ -194,11 +224,6 @@ class ZonerTextStyles {
     height: 1,
   );
 
-  static TextStyle displaySmallAlt = const TextStyle(
-    fontFamily: "Gloock",
-    fontSize: 36,
-    height: 1,
-  );
   static TextStyle displaySmall = const TextStyle(
     fontWeight: FontWeight.normal,
     fontSize: 36,
@@ -207,72 +232,44 @@ class ZonerTextStyles {
 
   ///---Headline---///
   static TextStyle headlineLarge = const TextStyle(
+    fontWeight: FontWeight.w700,
     fontSize: 32,
     height: 1,
   );
-  static TextStyle headlineLargeAlt = const TextStyle(
-    fontFamily: "Gloock",
-    fontSize: 32,
-    height: 1,
-  );
+
   static TextStyle headlineMedium = const TextStyle(
+    fontWeight: FontWeight.w700,
     fontSize: 28,
     height: 1,
   );
-  static TextStyle headlineMediumAlt = const TextStyle(
-    fontFamily: "Gloock",
-    fontSize: 28,
-    height: 1,
-  );
+
   static TextStyle headlineSmall = const TextStyle(
-    fontSize: 24,
-    height: 1,
-  );
-  static TextStyle headlineSmallAlt = const TextStyle(
-    fontFamily: "Gloock",
+    fontWeight: FontWeight.w700,
     fontSize: 24,
     height: 1,
   );
 
   ///---Title---///
-  static TextStyle titleLargeAlt = const TextStyle(
-    fontFamily: "Gloock",
-    fontSize: 22,
-    height: 1,
-  );
+
   static TextStyle titleLarge = const TextStyle(
-    fontWeight: FontWeight.normal,
+    fontWeight: FontWeight.w700,
     fontSize: 22,
     height: 1,
   );
 
-  static TextStyle titleMediumAlt = const TextStyle(
-    fontFamily: "Gloock",
-    fontSize: 16,
-    height: 1,
-  );
   static TextStyle titleMedium = const TextStyle(
-    fontWeight: FontWeight.normal,
+    fontWeight: FontWeight.w700,
     fontSize: 16,
     height: 1,
   );
 
-  static TextStyle titleSmallAlt = const TextStyle(
-    fontFamily: "Gloock",
-    fontSize: 14,
-    height: 1,
-  );
   static TextStyle titleSmall = const TextStyle(
-    fontWeight: FontWeight.normal,
+    fontWeight: FontWeight.w700,
     fontSize: 14,
     height: 1,
   );
 
   ///---Body---///
-  static TextStyle bodyLargeAlt = const TextStyle(
-    fontSize: 16,
-    fontFamily: "Gloock",
-  );
 
   static TextStyle bodyLarge = const TextStyle(
     fontWeight: FontWeight.normal,
@@ -280,10 +277,6 @@ class ZonerTextStyles {
     //  height: 1,
   );
 
-  static TextStyle bodyMediumAlt = const TextStyle(
-    fontSize: 14,
-    fontFamily: "Gloock",
-  );
   static TextStyle bodyMedium = const TextStyle(
     fontWeight: FontWeight.normal,
     fontSize: 14,

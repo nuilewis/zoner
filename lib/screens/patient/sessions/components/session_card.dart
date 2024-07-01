@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 import '../../../../core/core.dart';
-import '../../../components_global/components.dart';
+import '../../../shared/components_global/components.dart';
 import 'double_avatar.dart';
 
-enum SessionState { request, ongoing, completed }
+enum SessionState { request, ongoing, completed, closed }
 
 class SessionCard extends StatelessWidget {
   final SessionState sessionState;
@@ -47,7 +47,7 @@ class SessionCard extends StatelessWidget {
 
     return Container(
       margin: margin,
-      width: MediaQuery.sizeOf(context).width * .9,
+      width: MediaQuery.sizeOf(context).width * .8,
       padding: const EdgeInsets.all(kPadding16),
       decoration: sessionDecoration,
       child: Column(

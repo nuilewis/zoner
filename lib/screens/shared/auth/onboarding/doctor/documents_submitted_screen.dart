@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:zoner/screens/components_global/components.dart';
 
 import '../../../../../core/core.dart';
+import '../../../components_global/components.dart';
 
 class DocumentsSubmittedScreen extends StatelessWidget {
   static const String id = "documents_submitted";

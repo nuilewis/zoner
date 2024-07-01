@@ -1,7 +1,9 @@
 export 'article_card.dart';
 export 'bottom_nav_bar.dart';
+export 'filter_search_results_list_item.dart';
 export 'horizontal_details_item.dart';
 export 'profile_image_app_bar.dart';
+export 'search_filter.dart';
 export 'zoner_app_bar.dart';
 export 'zoner_bottom_sheet.dart';
 export 'zoner_button.dart';

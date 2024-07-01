@@ -2,9 +2,9 @@ import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:zoner/core/core.dart';
-import 'package:zoner/screens/components_global/components.dart';
 import 'package:zoner/screens/patient/sessions/components/double_avatar.dart';
 
+import '../../shared/components_global/components.dart';
 import 'components/session_medication_list_item.dart';
 import 'components/session_test_list_item.dart';
 

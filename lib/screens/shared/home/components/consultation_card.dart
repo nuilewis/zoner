@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 import '../../../../core/core.dart';
-import '../../../components_global/components.dart';
+import '../../../shared/components_global/components.dart';
 
 class ConsultationCard extends StatelessWidget {
   const ConsultationCard({super.key});

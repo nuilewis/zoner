@@ -2,10 +2,9 @@ import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:zoner/core/core.dart';
-import 'package:zoner/screens/components_global/large_pill_chips.dart';
-import 'package:zoner/screens/doctor/profile/components/availibility_list_item.dart';
 
-import '../../components_global/components.dart';
+import '../../doctor/profile/components/components.dart';
+import '../../shared/components_global/components.dart';
 
 final List<String> facilities = [
   "Imaging",

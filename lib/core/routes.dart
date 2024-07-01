@@ -1,12 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
+import 'package:zoner/screens/doctor/profile/doctor_profile_screen.dart';
 import 'package:zoner/screens/patient/cart/cart_screen.dart';
 import 'package:zoner/screens/patient/cart/checkout_card_screen.dart';
 import 'package:zoner/screens/patient/cart/checkout_failed_screen.dart';
 import 'package:zoner/screens/patient/cart/checkout_mobile_money_screen.dart';
 import 'package:zoner/screens/patient/cart/checkout_success_screen.dart';
-import 'package:zoner/screens/patient/discover/discover_screen.dart';
-import 'package:zoner/screens/patient/discover/doctor_profile_screen.dart';
 import 'package:zoner/screens/patient/discover/find_doctors_screen.dart';
 import 'package:zoner/screens/patient/discover/hospital_details_screen.dart';
 import 'package:zoner/screens/patient/discover/qr_result_profile.dart';
@@ -14,9 +13,10 @@ import 'package:zoner/screens/patient/discover/scan_qr_screen.dart';
 import 'package:zoner/screens/patient/sessions/session_details_screen.dart';
 import 'package:zoner/screens/patient/sessions/sessions_screen.dart';
 
-import '../screens/components_global/bottom_nav_bar.dart';
-import '../screens/patient/home/home_screen.dart';
+import '../screens/patient/discover/discover_screen.dart';
 import '../screens/shared/auth/auth.dart';
+import '../screens/shared/components_global/components.dart';
+import '../screens/shared/home/home_screen.dart';
 import '../screens/shared/messages/messages.dart';
 
 class AppRouter {
@@ -114,7 +114,7 @@ class AppRouter {
 
       //------- Home -------//
       GoRoute(
-        path: "/patient/${HomeScreen.id}",
+        path: "/${HomeScreen.id}",
         name: HomeScreen.id,
         builder: (BuildContext context, GoRouterState state) =>
             const HomeScreen(),

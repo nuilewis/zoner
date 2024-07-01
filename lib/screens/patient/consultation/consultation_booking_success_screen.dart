@@ -2,8 +2,8 @@ import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:zoner/core/core.dart';
-import 'package:zoner/screens/components_global/components.dart';
 
+import '../../shared/components_global/components.dart';
 import 'components/components.dart';
 
 class ConsultationBookingSuccessScreen extends StatelessWidget {

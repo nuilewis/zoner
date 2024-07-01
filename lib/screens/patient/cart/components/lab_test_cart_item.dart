@@ -3,14 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:zoner/core/core.dart';
 
-import '../../../components_global/components.dart';
+import '../../../shared/components_global/components.dart';
 
 class LabTestCartItem extends StatelessWidget {
   final String testName;
   final String price;
   final VoidCallback onDelete;
 
-  const LabTestCartItem({super.key, 
+  const LabTestCartItem({
+    super.key,
     required this.testName,
     required this.price,
     required this.onDelete,

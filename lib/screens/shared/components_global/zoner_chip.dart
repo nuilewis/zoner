@@ -1,9 +1,9 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:zoner/screens/components_global/components.dart';
+import 'package:zoner/screens/shared/components_global/components.dart';
 
-import '../../core/core.dart';
+import '../../../core/core.dart';
 
 class ZonerChip extends StatefulWidget {
   const ZonerChip({

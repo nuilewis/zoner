@@ -6,7 +6,7 @@ import 'package:zoner/screens/patient/cart/checkout_mobile_money_screen.dart';
 import 'package:zoner/screens/patient/cart/components/payment_method_selector_item.dart';
 
 import '../../../core/core.dart';
-import '../../components_global/components.dart';
+import '../../shared/components_global/components.dart';
 import 'components/lab_test_cart_item.dart';
 import 'components/session_cart_item.dart';
 

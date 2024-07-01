@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:zoner/core/core.dart';
-import 'package:zoner/screens/components_global/components.dart';
+import 'package:zoner/screens/shared/components_global/components.dart';
 
 import 'auth.dart';
 

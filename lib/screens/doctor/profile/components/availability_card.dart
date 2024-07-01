@@ -1,6 +1,7 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:zoner/screens/shared/components_global/components.dart';
 
 import '../../../../core/core.dart';
 import 'components.dart';
@@ -14,17 +15,22 @@ Map<String, String> availabilityData = {
 };
 
 class AvailabilityCard extends StatelessWidget {
-  const AvailabilityCard({super.key});
+  final bool isPublicMode;
+  const AvailabilityCard({super.key, this.isPublicMode = false});
 
   @override
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
+    final bool isDarkMode = theme.brightness == Brightness.dark;
     return Container(
       padding: const EdgeInsets.all(kPadding16),
       margin: const EdgeInsets.all(kPadding16),
       decoration: BoxDecoration(
+        border: Border.all(
+            color: isDarkMode ? ZonerColors.neutral20 : ZonerColors.neutral90,
+            width: 1),
         borderRadius: BorderRadius.circular(kPadding24),
-        color: theme.cardColor,
+        //color: theme.cardColor,
       ),
       child: Column(
         children: [
@@ -53,7 +59,26 @@ class AvailabilityCard extends StatelessWidget {
                   day: availabilityData.keys.toList()[index],
                   availability: availabilityData.values.toList()[index]),
               separatorBuilder: (context, index) => const Gap(kPadding8),
-              itemCount: availabilityData.length)
+              itemCount: availabilityData.length),
+          Visibility(
+            visible: isPublicMode,
+            child: Column(
+              children: [
+                const Gap(kPadding16),
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: FittedBox(
+                    child: ZonerButton(
+                      onPressed: () {},
+                      label: "Manage Availability",
+                      buttonType: AppButtonType.outline,
+                      isChipButton: true,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          )
         ],
       ),
     );

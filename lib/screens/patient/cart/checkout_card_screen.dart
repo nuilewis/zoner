@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:zoner/core/constants.dart';
-import 'package:zoner/screens/components_global/components.dart';
 import 'package:zoner/screens/patient/cart/checkout_failed_screen.dart';
+
+import '../../shared/components_global/components.dart';
 
 class CheckoutCardScreen extends StatefulWidget {
   static const id = "checkout_card";

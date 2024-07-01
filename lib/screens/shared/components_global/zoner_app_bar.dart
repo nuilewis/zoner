@@ -65,7 +65,9 @@ class ZonerAppBar extends StatelessWidget {
         const Gap(kPadding8),
         Visibility(
           visible: showTitle!,
-          child: Text(pageTitle ?? "", style: theme.textTheme.displaySmall),
+          child: Text(pageTitle ?? "",
+              style: theme.textTheme.displaySmall!
+                  .copyWith(fontWeight: FontWeight.w800)),
         ),
         const Gap(32),
       ],

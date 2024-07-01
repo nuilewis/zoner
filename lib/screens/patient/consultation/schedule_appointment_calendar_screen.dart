@@ -3,8 +3,9 @@ import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:zoner/core/core.dart';
-import 'package:zoner/screens/components_global/components.dart';
-import 'package:zoner/screens/patient/consultation/components/calendar_day_selector.dart';
+import 'package:zoner/screens/patient/consultation/components/calendar_week_date_selector.dart';
+
+import '../../shared/components_global/components.dart';
 
 class ScheduleAppointmentCalendarScreen extends StatefulWidget {
   static const String id = "schedule_appointment_calendar";
@@ -83,7 +84,7 @@ class _ScheduleAppointmentCalendarScreenState
                     ],
                   ),
                   const Gap(kPadding8),
-                  CalendarWeekDaySelector(selectedDay: (selectedDay) {
+                  CalendarWeekDateSelector(selectedDay: (selectedDay) {
                     //  print(selectedDay);
 
                     setState(() {

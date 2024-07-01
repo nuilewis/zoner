@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 import '../../../../core/core.dart';
-import '../../../components_global/components.dart';
+import '../../../shared/components_global/components.dart';
 import '../../consultation/components/components.dart';
 
 class DoctorSearchResultCard extends StatelessWidget {

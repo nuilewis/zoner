@@ -3,16 +3,16 @@ import 'package:flutter/services.dart';
 import 'package:gap/gap.dart';
 import 'package:zoner/screens/patient/consultation/components/calendar_day_selector_item.dart';
 
-class CalendarWeekDaySelector extends StatefulWidget {
-  const CalendarWeekDaySelector({super.key, required this.selectedDay});
+class CalendarWeekDateSelector extends StatefulWidget {
+  const CalendarWeekDateSelector({super.key, required this.selectedDay});
   final void Function(String selectedDay) selectedDay;
 
   @override
-  State<CalendarWeekDaySelector> createState() =>
-      _CalendarWeekDaySelectorState();
+  State<CalendarWeekDateSelector> createState() =>
+      _CalendarWeekDateSelectorState();
 }
 
-class _CalendarWeekDaySelectorState extends State<CalendarWeekDaySelector> {
+class _CalendarWeekDateSelectorState extends State<CalendarWeekDateSelector> {
   final List<String> days = [
     "Monday",
     "Tuesday",
