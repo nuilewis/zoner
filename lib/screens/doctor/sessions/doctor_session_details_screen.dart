@@ -7,7 +7,7 @@ import 'package:zoner/screens/patient/sessions/components/components.dart';
 import 'package:zoner/screens/shared/components_global/components.dart';
 
 class DoctorSessionDetailsScreen extends StatefulWidget {
-  static const String id = "session_details";
+  static const String id = "doctor_session_details";
   const DoctorSessionDetailsScreen({super.key, this.isEditingMode = true});
   final bool isEditingMode;
 
@@ -40,7 +40,7 @@ class _DoctorSessionDetailsScreenState
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const ZonerAppBar(pageTitle: "Session Details"),
+              const ZonerAppBar(pageTitle: "Doctor Session Details"),
               const Gap(kPadding48),
               const DoubleAvatar(
                   imagePath1: "assets/images/memoji.jpg",

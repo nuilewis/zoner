@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
 import 'package:zoner/screens/doctor/profile/doctor_profile_screen.dart';
+import 'package:zoner/screens/doctor/sessions/doctor_session_details_screen.dart';
+import 'package:zoner/screens/doctor/sessions/doctor_sessions_screen.dart';
 import 'package:zoner/screens/patient/cart/cart_screen.dart';
 import 'package:zoner/screens/patient/cart/checkout_card_screen.dart';
 import 'package:zoner/screens/patient/cart/checkout_failed_screen.dart';
@@ -8,31 +10,42 @@ import 'package:zoner/screens/patient/cart/checkout_mobile_money_screen.dart';
 import 'package:zoner/screens/patient/cart/checkout_success_screen.dart';
 import 'package:zoner/screens/patient/discover/find_doctors_screen.dart';
 import 'package:zoner/screens/patient/discover/hospital_details_screen.dart';
-import 'package:zoner/screens/patient/discover/qr_result_profile.dart';
-import 'package:zoner/screens/patient/discover/scan_qr_screen.dart';
+import 'package:zoner/screens/patient/profile/medication_booklet_screen.dart';
 import 'package:zoner/screens/patient/sessions/session_details_screen.dart';
 import 'package:zoner/screens/patient/sessions/sessions_screen.dart';
+import 'package:zoner/screens/shared/auth/loading_screen.dart';
 
+import '../screens/doctor/bottom_nav_bar/doctor_bottom_nav_bar.dart';
 import '../screens/patient/discover/discover_screen.dart';
+import '../screens/patient/profile/patient_profile_screen.dart';
 import '../screens/shared/auth/auth.dart';
 import '../screens/shared/components_global/components.dart';
 import '../screens/shared/home/home_screen.dart';
 import '../screens/shared/messages/messages.dart';
+import '../screens/shared/qr/scan_qr_screen.dart';
 
 class AppRouter {
   final GoRouter router = GoRouter(
     debugLogDiagnostics: true,
-    initialLocation: "/${OnboardingScreen.id}",
+    //initialLocation: "/${OnboardingScreen.id}",
+    initialLocation: "/${DoctorBottomNavBar.id}",
     routes: <GoRoute>[
-      /// ----- Nav Bar ---- ///
+      ///------S H A R E D-------///
+      // ----- Nav Bar ---- //
       GoRoute(
         path: "/",
         name: BottomNavBar.id,
         builder: (BuildContext context, GoRouterState state) =>
             const BottomNavBar(),
       ),
+      GoRoute(
+        path: "/${DoctorBottomNavBar.id}",
+        name: DoctorBottomNavBar.id,
+        builder: (BuildContext context, GoRouterState state) =>
+            const DoctorBottomNavBar(),
+      ),
 
-      /// ------- Messaging ----- ////
+      // ------- Messaging ----- //
       GoRoute(
         path: "/${MessagesScreen.id}",
         name: MessagesScreen.id,
@@ -57,8 +70,15 @@ class AppRouter {
                   const ChatScreen()),
         ],
       ),
+      // ----- QR -------//
+      GoRoute(
+        path: "/${ScanQrScreen.id}",
+        name: ScanQrScreen.id,
+        builder: (BuildContext context, GoRouterState state) =>
+            const ScanQrScreen(),
+      ),
 
-      ///------Onboarding and Auth-------///
+      /// ------- Onboarding and Auth ----- ////
       GoRoute(
         path: "/${OnboardingScreen.id}",
         name: OnboardingScreen.id,
@@ -66,6 +86,12 @@ class AppRouter {
             const OnboardingScreen(),
         routes: <GoRoute>[
           //------ Auth-------//
+          GoRoute(
+            path: LoadingScreen.id,
+            name: LoadingScreen.id,
+            builder: (BuildContext context, GoRouterState state) =>
+                const LoadingScreen(),
+          ),
           GoRoute(
             path: SignInScreen.id,
             name: SignInScreen.id,
@@ -103,15 +129,17 @@ class AppRouter {
                 const DocumentsSubmittedScreen(),
           ),
           GoRoute(
-              path: "doctor/${DoctorVerificationScreen.id}",
-              name: DoctorVerificationScreen.id,
-              builder: (BuildContext context, GoRouterState state) =>
-                  const DoctorVerificationScreen()),
+            path: "doctor/${DoctorVerificationScreen.id}",
+            name: DoctorVerificationScreen.id,
+            builder: (BuildContext context, GoRouterState state) =>
+                const DoctorVerificationScreen(),
+          ),
         ],
       ),
 
-      ///-------Patient Section--------///
-
+      ///-------P A T I E N T   S E C T I O N--------///
+      ///
+      ///
       //------- Home -------//
       GoRoute(
         path: "/${HomeScreen.id}",
@@ -139,27 +167,8 @@ class AppRouter {
             builder: (BuildContext context, GoRouterState state) =>
                 const FindDoctorsScreen(),
           ),
-          GoRoute(
-            path: DoctorProfileScreen.id,
-            name: DoctorProfileScreen.id,
-            builder: (BuildContext context, GoRouterState state) =>
-                const DoctorProfileScreen(),
-          ),
-          GoRoute(
-            path: QrResultProfile.id,
-            name: QrResultProfile.id,
-            builder: (BuildContext context, GoRouterState state) =>
-                const QrResultProfile(),
-          ),
-          GoRoute(
-            path: ScanQrScreen.id,
-            name: ScanQrScreen.id,
-            builder: (BuildContext context, GoRouterState state) =>
-                const ScanQrScreen(),
-          ),
         ],
       ),
-
       //------Sessions------//
       GoRoute(
         path: "/patient/${SessionsScreen.id}",
@@ -176,7 +185,6 @@ class AppRouter {
           ),
         ],
       ),
-
       //------Cart------//
       GoRoute(
         path: "/patient/${CartScreen.id}",
@@ -209,6 +217,54 @@ class AppRouter {
                 const CheckoutFailedScreen(),
           ),
         ],
+      ),
+      //------Profile------//
+      GoRoute(
+          path: "/patient/${ProfileScreen.id}",
+          name: ProfileScreen.id,
+          builder: (BuildContext context, GoRouterState state) =>
+              const ProfileScreen(),
+          routes: <GoRoute>[
+            GoRoute(
+              path: MedicationBookletScreen.id,
+              name: MedicationBookletScreen.id,
+              builder: (BuildContext context, GoRouterState state) =>
+                  const MedicationBookletScreen(),
+            ),
+          ]),
+
+      ///-------D O C T O R   S E C T I O N--------///
+      ///
+      ///
+      ///
+      //------- Home -------//
+      GoRoute(
+        path: "/${HomeScreen.doctorId}",
+        name: HomeScreen.doctorId,
+        builder: (BuildContext context, GoRouterState state) =>
+            const HomeScreen(isDoctor: true),
+      ),
+      //------Sessions------//
+      GoRoute(
+        path: "/doctor/${DoctorSessionsScreen.id}",
+        name: DoctorSessionsScreen.id,
+        builder: (BuildContext context, GoRouterState state) =>
+            const DoctorSessionsScreen(),
+        routes: <GoRoute>[
+          GoRoute(
+            path: DoctorSessionDetailsScreen.id,
+            name: DoctorSessionDetailsScreen.id,
+            builder: (BuildContext context, GoRouterState state) =>
+                const DoctorSessionDetailsScreen(),
+          ),
+        ],
+      ),
+      //------Profile------//
+      GoRoute(
+        path: "/doctor/${DoctorProfileScreen.id}",
+        name: DoctorProfileScreen.id,
+        builder: (BuildContext context, GoRouterState state) =>
+            const DoctorProfileScreen(),
       ),
     ],
   );

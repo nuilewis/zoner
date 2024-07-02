@@ -1,6 +1,5 @@
 import 'package:calendar_view/calendar_view.dart';
 import 'package:flutter/material.dart';
-import 'package:zoner/screens/doctor/sessions/doctor_session_details_screen.dart';
 
 import 'core/core.dart';
 import 'core/routes.dart';
@@ -18,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return CalendarControllerProvider(
       controller: EventController(),
-      child: MaterialApp(
+      child: MaterialApp.router(
         title: 'Zoner',
         debugShowCheckedModeBanner: false,
         theme: ZonerThemeData.lightTheme,
@@ -28,8 +27,8 @@ class MyApp extends StatelessWidget {
           curve: Curves.easeInOut,
           duration: const Duration(milliseconds: 300),
         ),
-        // routerConfig: appRouter.router,
-        home: const DoctorSessionDetailsScreen(),
+        routerConfig: appRouter.router,
+        // home: const DoctorSessionDetailsScreen(),
       ),
     );
   }

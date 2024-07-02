@@ -2,9 +2,11 @@ import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
+import 'package:zoner/screens/doctor/sessions/doctor_session_details_screen.dart';
 import 'package:zoner/screens/patient/discover/find_doctors_screen.dart';
 import 'package:zoner/screens/patient/sessions/components/session_card.dart';
 import 'package:zoner/screens/patient/sessions/session_details_screen.dart';
+import 'package:zoner/screens/shared/qr/scan_qr_screen.dart';
 
 import '../../../core/core.dart';
 import '../../doctor/profile/components/components.dart';
@@ -13,8 +15,9 @@ import 'components/components.dart';
 
 class HomeScreen extends StatelessWidget {
   static const String id = "home";
-  const HomeScreen({super.key});
-  final bool isDoctor = true;
+  static const String doctorId = "doctor_home";
+  const HomeScreen({super.key, this.isDoctor = false});
+  final bool isDoctor;
 
   @override
   Widget build(BuildContext context) {
@@ -40,38 +43,29 @@ class HomeScreen extends StatelessWidget {
                 padding: const EdgeInsets.only(left: kPadding16),
                 child: Text(
                   "Session Requests",
-                  style: theme.textTheme.titleLarge,
+                  style: theme.textTheme.titleMedium,
                 ),
               ),
-              const Gap(kPadding8),
+              const Gap(kPadding12),
               SizedBox(
-                height: 195,
-                child: CustomScrollView(
+                height: 188,
+                child: ListView.separated(
+                  padding: const EdgeInsets.symmetric(horizontal: kPadding16),
                   scrollDirection: Axis.horizontal,
-                  slivers: [
-                    SliverPadding(
-                      padding: const EdgeInsets.only(left: kPadding16),
-                      sliver: SliverPrototypeExtentList.builder(
-                          itemCount: 4,
-                          itemBuilder: (context, index) => FittedBox(
-                                child: SessionCard(
-                                  margin:
-                                      const EdgeInsets.only(right: kPadding16),
-                                  sessionState: SessionState.request,
-                                  onPressed: () {
-                                    context.pushNamed(SessionDetailsScreen.id);
-                                  },
-                                ),
-                              ),
-                          prototypeItem: SessionCard(
-                            onPressed: () {
-                              context.pushNamed(SessionDetailsScreen.id);
-                            },
-                            margin: const EdgeInsets.only(right: kPadding16),
-                            sessionState: SessionState.request,
-                          )),
-                    ),
-                  ],
+                  separatorBuilder: (context, index) => const Gap(kPadding16),
+                  itemCount: 3,
+                  itemBuilder: (context, index) {
+                    return FittedBox(
+                      child: SessionCard(
+                        onPressed: () {
+                          context.pushNamed(isDoctor
+                              ? DoctorSessionDetailsScreen.id
+                              : SessionDetailsScreen.id);
+                        },
+                        sessionState: SessionState.request,
+                      ),
+                    );
+                  },
                 ),
               ),
               const Gap(kPadding24),
@@ -79,39 +73,29 @@ class HomeScreen extends StatelessWidget {
                 padding: const EdgeInsets.only(left: kPadding16),
                 child: Text(
                   "Ongoing Sessions",
-                  style: theme.textTheme.titleLarge,
+                  style: theme.textTheme.titleMedium,
                 ),
               ),
-              const Gap(kPadding8),
+              const Gap(kPadding12),
               SizedBox(
-                height: 180,
-                child: CustomScrollView(
+                height: 168,
+                child: ListView.separated(
+                  padding: const EdgeInsets.symmetric(horizontal: kPadding16),
                   scrollDirection: Axis.horizontal,
-                  //   physics: AlwaysScrollableScrollPhysics(),
-                  restorationId: "ongoing_sessions_list",
-                  slivers: [
-                    SliverPadding(
-                      padding:
-                          const EdgeInsets.symmetric(horizontal: kPadding16),
-                      sliver: SliverPrototypeExtentList.builder(
-                        itemBuilder: (context, index) => FittedBox(
-                          child: SessionCard(
-                            onPressed: () {
-                              context.pushNamed(SessionDetailsScreen.id);
-                            },
-                            margin: const EdgeInsets.only(right: kPadding16),
-                          ),
-                        ),
-                        prototypeItem: SessionCard(
-                          onPressed: () {
-                            context.pushNamed(SessionDetailsScreen.id);
-                          },
-                          margin: const EdgeInsets.only(right: kPadding16),
-                        ),
-                        itemCount: 3,
+                  separatorBuilder: (context, index) => const Gap(kPadding16),
+                  itemCount: 3,
+                  itemBuilder: (context, index) {
+                    return FittedBox(
+                      child: SessionCard(
+                        onPressed: () {
+                          context.pushNamed(isDoctor
+                              ? DoctorSessionDetailsScreen.id
+                              : SessionDetailsScreen.id);
+                        },
+                        sessionState: SessionState.ongoing,
                       ),
-                    )
-                  ],
+                    );
+                  },
                 ),
               ),
               const Gap(kPadding24),
@@ -125,7 +109,9 @@ class HomeScreen extends StatelessWidget {
                       padding:
                           const EdgeInsets.symmetric(horizontal: kPadding16),
                       child: ZonerButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          context.pushNamed(ScanQrScreen.id);
+                        },
                         label: "Scan QR Code",
                         icon: FluentIcons.qr_code_24_filled,
                         color: theme.scaffoldBackgroundColor,

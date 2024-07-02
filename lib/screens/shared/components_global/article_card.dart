@@ -21,6 +21,10 @@ class ArticleCard extends StatelessWidget {
             height: 190,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(24),
+              image: const DecorationImage(
+                fit: BoxFit.cover,
+                image: AssetImage("assets/images/image.jpg"),
+              ),
               color: theme.cardColor,
             ),
             child: Stack(

@@ -9,9 +9,9 @@ import '../../doctor/profile/components/components.dart';
 import '../../shared/messages/messages.dart';
 import 'components/components.dart';
 
-class PatientProfileScreen extends StatelessWidget {
-  static const String id = "patient_profile";
-  const PatientProfileScreen({super.key});
+class ProfileScreen extends StatelessWidget {
+  static const String id = "profile";
+  const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

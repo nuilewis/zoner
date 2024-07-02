@@ -28,12 +28,12 @@ class DoctorSessionsScreen extends StatelessWidget {
               padding: const EdgeInsets.only(left: kPadding16),
               child: Text(
                 "Session Requests",
-                style: theme.textTheme.titleLarge,
+                style: theme.textTheme.titleMedium,
               ),
             ),
             const Gap(kPadding16),
             SizedBox(
-              height: 185,
+              height: 188,
               child: ListView.separated(
                   padding: const EdgeInsets.symmetric(horizontal: kPadding16),
                   scrollDirection: Axis.horizontal,
@@ -42,11 +42,13 @@ class DoctorSessionsScreen extends StatelessWidget {
                   },
                   itemCount: 3,
                   itemBuilder: (context, index) {
-                    return SessionCard(
-                      onPressed: () {
-                        context.pushNamed(SessionDetailsScreen.id);
-                      },
-                      sessionState: SessionState.request,
+                    return FittedBox(
+                      child: SessionCard(
+                        onPressed: () {
+                          context.pushNamed(SessionDetailsScreen.id);
+                        },
+                        sessionState: SessionState.request,
+                      ),
                     );
                   }),
             ),
@@ -55,12 +57,12 @@ class DoctorSessionsScreen extends StatelessWidget {
               padding: const EdgeInsets.only(left: kPadding16),
               child: Text(
                 "Ongoing Sessions",
-                style: theme.textTheme.titleLarge,
+                style: theme.textTheme.titleMedium,
               ),
             ),
             const Gap(kPadding16),
             SizedBox(
-              height: 166,
+              height: 168,
               child: ListView.separated(
                   padding: const EdgeInsets.symmetric(horizontal: kPadding16),
                   scrollDirection: Axis.horizontal,
@@ -69,11 +71,13 @@ class DoctorSessionsScreen extends StatelessWidget {
                   },
                   itemCount: 3,
                   itemBuilder: (context, index) {
-                    return SessionCard(
-                      onPressed: () {
-                        context.pushNamed(SessionDetailsScreen.id);
-                      },
-                      sessionState: SessionState.ongoing,
+                    return FittedBox(
+                      child: SessionCard(
+                        onPressed: () {
+                          context.pushNamed(SessionDetailsScreen.id);
+                        },
+                        sessionState: SessionState.ongoing,
+                      ),
                     );
                   }),
             ),
@@ -82,7 +86,7 @@ class DoctorSessionsScreen extends StatelessWidget {
               padding: const EdgeInsets.only(left: kPadding16),
               child: Text(
                 "Previous Sessions",
-                style: theme.textTheme.titleLarge,
+                style: theme.textTheme.titleMedium,
               ),
             ),
             const Gap(kPadding16),

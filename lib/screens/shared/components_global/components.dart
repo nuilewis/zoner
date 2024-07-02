@@ -1,5 +1,5 @@
+export '../../patient/bottom_nav_bar/bottom_nav_bar.dart';
 export 'article_card.dart';
-export 'bottom_nav_bar.dart';
 export 'filter_search_results_list_item.dart';
 export 'horizontal_details_item.dart';
 export 'profile_image_app_bar.dart';

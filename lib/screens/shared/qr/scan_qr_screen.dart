@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:zoner/core/constants.dart';
-import 'package:zoner/screens/patient/discover/qr_result_profile.dart';
+import 'package:zoner/screens/shared/qr/qr_result_profile.dart';
 
-import '../../shared/components_global/components.dart';
+import '../components_global/components.dart';
 
 class ScanQrScreen extends StatelessWidget {
   static const id = "scan_qr";
@@ -19,13 +19,15 @@ class ScanQrScreen extends StatelessWidget {
             const ZonerAppBar(pageTitle: "Scan QR"),
             const Spacer(),
             InkWell(
+              splashColor: theme.colorScheme.primary.withOpacity(.2),
+              borderRadius: BorderRadius.circular(kPadding24),
               onTap: () {
                 showModalBottomSheet(
                     isScrollControlled: true,
                     context: context,
                     builder: (context) => const QrResultProfile());
               },
-              child: Container(
+              child: Ink(
                 height: MediaQuery.sizeOf(context).width * .6,
                 width: MediaQuery.sizeOf(context).width * .6,
                 decoration: BoxDecoration(

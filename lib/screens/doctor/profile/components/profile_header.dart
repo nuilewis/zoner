@@ -55,7 +55,7 @@ class ProfileHeader extends StatelessWidget {
                         context.pop();
                       },
                       style: IconButton.styleFrom(
-                        backgroundColor: ZonerColors.purple90,
+                        backgroundColor: theme.cardColor.withOpacity(.8),
                         fixedSize: const Size.square(32),
                       ),
                       icon: const Icon(
@@ -68,7 +68,7 @@ class ProfileHeader extends StatelessWidget {
                         ///Todo: Trigger Video Call
                       },
                       style: IconButton.styleFrom(
-                        backgroundColor: ZonerColors.purple90,
+                        backgroundColor: theme.cardColor.withOpacity(.8),
                         fixedSize: const Size.square(32),
                       ),
                       icon: const Icon(
